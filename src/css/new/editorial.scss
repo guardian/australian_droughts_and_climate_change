@@ -1,0 +1,102 @@
+.fullscreen_container {
+	width: 100%;
+	display: inline-block;
+	position: relative;
+	background-color: white;
+    -webkit-box-shadow: 1px -1px 6px 6px rgba(222,215,222,0.4);
+    -moz-box-shadow: 1px -1px 6px 6px rgba(222,215,222,0.4);
+    box-shadow: 1px -1px 6px 6px rgba(222,215,222,0.4);
+    z-index: 999;
+
+
+
+
+	.breakout_block {
+	    box-sizing: border-box;
+	    width: 100%;
+	    max-width: 800px;
+	    margin: auto;
+	    background-color: white;
+	    position: relative;
+	    padding: 20px;
+	    clear: both;
+
+	}
+
+}
+
+p {
+	font-size: 18px;
+    display: block;
+    margin-top: 0;
+    font-weight: 400;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.standfirst {
+	width: 100;
+	max-width: 800px;
+	margin: auto;
+}
+
+
+.editorial_container {
+	width: 100%;
+	max-width: 960px;
+	margin: auto;
+	z-index: 999;
+	position: relative;
+
+	.bylines {
+		font-size: 1.2rem;
+		font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+		font-weight: 400;
+		color: #2a4006;
+		margin: auto;
+		margin-bottom: 20px;
+		max-width: 800px;
+	}
+
+	.bylines a:link {
+	    color: #2a4006;
+	    text-decoration: none;
+	}
+
+	/* visited link */
+	.bylines a:visited {
+	    color: #2a4006;
+	    text-decoration: none;
+	}
+
+	/* mouse over link */
+	.bylines a:hover {
+	    color: #2a4006;
+	    text-decoration: none;
+	}
+
+	/* selected link */
+	.bylines a:active {
+	    color: #2a4006;
+	    text-decoration: none;
+	}
+
+	.isolation_block {
+	    box-sizing: border-box;
+	    width: 100%;
+	    max-width: 800px;
+	    margin: auto;
+	    background-color: white;
+	    position: relative;
+	    padding: 20px;
+	    -webkit-box-shadow: 1px -1px 6px 6px rgba(222,215,222,0.4);
+	    -moz-box-shadow: 1px -1px 6px 6px rgba(222,215,222,0.4);
+	    box-shadow: 1px -1px 6px 6px rgba(222,215,222,0.4);
+	    opacity: 0.9;
+	}
+	
+}
+
+

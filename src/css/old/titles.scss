@@ -1,0 +1,289 @@
+
+#intro_container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-img {
+    display: none;
+}
+
+.mobilize .bg-img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+    opacity: 0.4;
+}
+
+@media (min-width: 800px) {
+
+    .titles {
+        position: absolute; 
+        z-index: 1001;
+        left: 50%; 
+        bottom: 20%; 
+        transform: 
+        translateX(-50%);
+        color:white
+    }
+
+    .titles h1 {
+        font-size: 3rem;
+        line-height: 3.2rem;
+        font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+        font-weight: 900;
+        color: #d8e0cb;
+        text-shadow: 1px 1px 10px #1b1b1b;
+    }
+
+    .titles h3 {
+        margin-top: 20px;
+        width: 75%;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+    }
+
+    .bg-img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+      
+      &:before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: 0;
+        bottom: 6px;
+        left: 0;
+        background-image: linear-gradient(to right, #2f262e, transparent);
+        opacity: .9; 
+      }
+
+  }
+
+}
+
+
+
+@media (max-width: 799px) {
+
+    .titles {
+        z-index: 1001;
+        position: absolute; 
+        top: 20%; 
+        left: 10%;
+        width: 80%;
+        color:white;
+    }
+
+
+    .titles h1 {
+        font-size: 3rem;
+        line-height: 3.2rem;
+        font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+        font-weight: 900;
+        text-shadow: 1px 1px 10px #1b1b1b;
+    }
+
+    .titles h3 {
+        margin-top: 20px;
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+}
+
+
+.multimedia_title h4 {
+    color: white;
+    font-size: 3rem;
+    line-height: 3rem;
+}
+
+.editorial .content_block .multimedia_title, {
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.hero {
+    margin-top: 40px;
+}
+
+.mobilize .hero {
+    margin-top: 0px;
+    border-top: 1px dotted #2a4006;
+}
+
+@media (min-width: 800px) {
+
+	.mobilize .titles h1 {
+		color: #d8e0cb;
+		font-size: 2.5rem;
+		line-height: 3.2rem;
+		text-shadow: 1px 1px 10px #1b1b1b;
+	}
+
+
+	.mobilize .titles h3 {
+		font-size: 1.2rem;
+		line-height: 1.5rem;
+	}
+
+
+	.multimedia_title {
+	    position: absolute;
+	    bottom: 40px;
+	    color: white;
+	}
+
+
+}
+
+.mobilize .multimedia_title {
+    display: none;
+}
+
+.titles {
+	display: none;
+}
+
+@media (max-width: 799px) and (min-width: 600px) {
+    
+	.mobilize .titles h1 {
+		text-shadow: 1px 1px 10px #1b1b1b;
+		color: #d8e0cb;
+        font-size: 30px;
+        line-height: 34px;
+	}
+
+	.mobilize .titles h3 {
+        font-size: 16px;
+        line-height: 20px;
+	}
+
+	.multimedia_title {
+	    position: absolute;
+	    bottom: 60px;
+	    color: white;
+	}
+
+}
+
+#interactive_app .owbl {
+	background-color: #c34812;
+	padding: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+	color: white;
+	display: inline-block;
+	margin-bottom: 15px;
+    font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+    font-weight: 900;
+}
+
+
+@media (max-width: 599px) {
+
+	#interactive_app .owbl {
+		font-size: 14px;
+	}
+    
+
+    .mobilize .titles {
+        z-index: 1001;
+        position: absolute; 
+        top: 50px; 
+        left: 10%;
+        width: 80%;
+        color:white;
+    }
+
+	.mobilize .titles h1 {
+		color: #d8e0cb;
+		font-size: 30px;
+		line-height: 34px;
+	}
+
+	.mobilize .titles h3 {
+		font-size: 16px;
+		line-height: 20px;
+	}
+
+	.multimedia_title {
+	    position: absolute;
+	    bottom: 60px;
+	    color: white;
+	}
+
+}
+
+#interactive_app .bylines {
+	margin-bottom: 20px;
+	font-size: 1.2rem;
+	font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+    font-weight: 400;
+    color: #2a4006;
+}
+
+#interactive_app .chart_titles {
+    font-size: 1.2rem;
+    font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+    font-weight: 400;
+    fill: #2a4006;
+}
+
+
+#interactive_app .owbl a:link {
+    color: white;
+    text-decoration: none;
+}
+
+/* visited link */
+#interactive_app .owbl a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+/* mouse over link */
+#interactive_app .owbl a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* selected link */
+#interactive_app .owbl a:active {
+    color: white;
+    text-decoration: none;
+}
+
+#interactive_app .bylines a:link {
+    color: #2a4006;
+    text-decoration: none;
+}
+
+/* visited link */
+#interactive_app .bylines a:visited {
+    color: #2a4006;
+    text-decoration: none;
+}
+
+/* mouse over link */
+#interactive_app .bylines a:hover {
+    color: #2a4006;
+    text-decoration: none;
+}
+
+/* selected link */
+#interactive_app .bylines a:active {
+    color: #2a4006;
+    text-decoration: none;
+}
+
+.red_underline {
+	border-bottom: 2px solid red;
+}

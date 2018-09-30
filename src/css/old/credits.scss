@@ -1,0 +1,90 @@
+.interactive {
+
+    .credits_box {
+
+      font-family: "Guardian Agate Sans 1 Web";
+      font-weight: 400;
+      font-style: normal;
+      font-stretch: normal;
+      font-size: 14px !important;
+      line-height: 150%;
+      margin: auto;
+      box-sizing: border-box;
+    }
+
+    .credits_box span {
+      font-weight: 600;
+    }
+
+    @media (min-width: 46.25em) {
+      .credits_box {
+        width: 740px; 
+      } 
+    }
+
+    @media (min-width: 61.25em) {
+      .credits_box {
+        width: 980px; 
+      } 
+    }
+
+    @media (min-width: 71.25em) {
+      .credits_box {
+        width: 1140px; 
+      } 
+    }
+
+    @media (min-width: 81.25em) {
+      .credits_box {
+        width: 1300px; 
+      } 
+    }
+
+    .footer .credits h2 {
+          margin: 1em 0px;
+    }
+
+    .credits {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 46.24em) {
+      .credits {
+        width: calc(90% - 40px);
+        margin: auto;
+      } 
+    }
+
+    @media (min-width: 46.25em) {
+      .credits {
+        width: 80%;
+        margin: auto;
+      } 
+    }
+
+    @media (min-width: 61.25em) {
+      .credits {
+        width: 70%;
+        margin: auto;
+      } 
+    }
+
+    @media (min-width: 71.25em) {
+      .credits {
+        width: 60%; 
+        margin: auto;
+      } 
+    }
+
+    @media (min-width: 81.25em) {
+      .credits {
+        width: 50%; 
+        margin: auto;
+      } 
+    }
+}
+

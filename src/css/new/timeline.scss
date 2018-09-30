@@ -1,0 +1,81 @@
+@import "mq";
+
+#timeline_map {
+
+	text-align: center;
+	font-family: 'Guardian Text Sans Web', TextSans, Arial, sans-serif;
+	font-size: 20px;
+
+	@include mq($until: tablet) {
+		width: 100%;
+		height: 320px;
+		background-color: red;
+	}
+
+	@include mq($from: tablet) {
+		float: right;
+		width: 320px;
+		height: 320px;
+		background-color: white;
+		border-radius: 50%;
+		border-style: solid;
+    	border-width: 1px;
+    	border-color: black;
+	}
+
+}
+
+#timeline_map span {
+	padding-top: 20px;
+	line-height: 600px;
+}
+
+.timeline-scroll-fixed{
+	position: fixed;
+	top: 150px;
+	left: calc(50% - 160px);
+	margin-left: 280px;
+}
+
+.anomolies_header {
+    width: 100%;
+    max-width: 960px;
+    height: 70px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 20px;
+    font-family: 'Guardian Text Sans Web', TextSans, Arial, sans-serif;
+    font-size: 20px;
+    border-bottom: 1px solid darkgrey;
+}
+
+.anomolies--positive {
+    fill: #1413db;
+}
+
+.anomolies--negative {
+    fill: #ff1a22;
+}
+
+.anomolies_container {
+    width: 100%;
+    position: relative;
+    z-index: -1;
+}
+
+#canvas_container {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 2;
+}
+
+.anomolies_block {
+	width: 100%;
+    z-index: 1;
+}
+
+.anomolies_block  svg {
+    z-index: -1;
+}

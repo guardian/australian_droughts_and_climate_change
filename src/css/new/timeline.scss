@@ -5,11 +5,15 @@
 	text-align: center;
 	font-family: 'Guardian Text Sans Web', TextSans, Arial, sans-serif;
 	font-size: 20px;
+	
 
 	@include mq($until: tablet) {
-		width: 100%;
+		width: calc(100% - 40px);
 		height: 320px;
-		background-color: red;
+		background-repeat: no-repeat;
+		border-bottom: 1px solid darkgrey;
+		z-index: 999;
+		background-color: white;
 	}
 
 	@include mq($from: tablet) {
@@ -31,10 +35,20 @@
 }
 
 .timeline-scroll-fixed{
-	position: fixed;
-	top: 150px;
-	left: calc(50% - 160px);
-	margin-left: 280px;
+
+	@include mq($until: tablet) {
+		position: fixed;
+		top: 70px;
+		width: calc(100% - 40px);
+	}
+
+	@include mq($from: tablet) {
+		position: fixed;
+		top: 150px;
+		left: calc(50% - 160px);
+		margin-left: 280px;
+	}
+
 }
 
 .anomolies_header {
@@ -43,10 +57,22 @@
     height: 70px;
     background-color: white;
     box-sizing: border-box;
-    padding: 20px;
+    
     font-family: 'Guardian Text Sans Web', TextSans, Arial, sans-serif;
     font-size: 20px;
     border-bottom: 1px solid darkgrey;
+
+    @include mq($until: tablet) {
+    	font-size: 20px;
+    	line-height: 24px;
+    	padding-top: 10px;
+    	width: calc(100% - 40px);
+    }
+
+    @include mq($from: tablet) {
+    	padding: 20px;
+    }
+
 }
 
 .anomolies--positive {
@@ -61,6 +87,7 @@
     width: 100%;
     position: relative;
     z-index: -1;
+    box-sizing: border-box;
 }
 
 #canvas_container {
@@ -73,7 +100,14 @@
 
 .anomolies_block {
 	width: 100%;
+	box-sizing: border-box;
     z-index: 1;
+
+    @include mq($until: tablet) {
+    	width: calc(100% - 40px);
+    	margin-top: 320px;
+    }
+
 }
 
 .anomolies_block  svg {

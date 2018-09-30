@@ -8,9 +8,6 @@
     box-shadow: 1px -1px 6px 6px rgba(222,215,222,0.4);
     z-index: 999;
 
-
-
-
 	.breakout_block {
 	    box-sizing: border-box;
 	    width: 100%;
@@ -49,6 +46,16 @@ p {
 	margin: auto;
 	z-index: 999;
 	position: relative;
+	box-sizing: border-box;
+
+		@include mq($until: tablet) {
+			padding: 20px;
+		}
+
+		@include mq($from: tablet) {
+
+		}
+
 
 	.bylines {
 		font-size: 1.2rem;

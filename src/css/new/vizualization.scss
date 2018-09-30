@@ -33,6 +33,11 @@
     width: 100%;
     margin: auto;
     max-width: 960px;
+
+    @include mq($until: tablet) {
+        margin-top: 40px;
+    }
+
 }
 
 #image_block img {
@@ -53,12 +58,9 @@
     max-width: 960px;
 }
 
-
-
 #map {
     width: 100%;
     position: relative;
-
 }
 
 #special_container {
@@ -116,6 +118,11 @@
     font-family: 'Guardian Text Sans Web', TextSans, Arial, sans-serif;
     color: darkgrey;
 
+    @include mq($until: tablet) {
+        margin-top: 200px;
+    }
+
+
     @include mq($from: tablet) {
         margin-left: 55px;
     }
@@ -142,7 +149,14 @@
 .chart_titles {
     font-family: 'Guardian Text Sans Web', TextSans, Arial, sans-serif;
     font-size: 20px;
+    line-height: 24px;
     font-weight: 600;
+    box-sizing: border-box;
+
+    @include mq($until: tablet) {
+        padding-left: 20px;
+        padding-right: 10px;
+    }
 
     @include mq($from: tablet) {
         margin-left: 80px;
@@ -151,8 +165,18 @@
 }
 
 #temp_block {
-    width: 100%;
+    
     display: inline-block;
+
+    @include mq($until: tablet) {
+        width: 100%;
+    }
+
+    @include mq($from: tablet) {
+        width: 100%;
+    }
+
+
 }
 
 

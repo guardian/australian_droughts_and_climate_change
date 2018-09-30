@@ -2,8 +2,7 @@ import * as d3 from 'd3'
 import { Toolbelt } from './toolbelt'
 import { $, $$, round, numberWithCommas, wait, getDimensions } from '../modules/util'
 import chroma from 'chroma-js'
-import * as topojson from "topojson"
-import moment from "moment"
+import * as topojson from "topojson" //npm install topojson --no-bin-links
 import '../modules/raf'
 import smoothscroll from 'smoothscroll-polyfill';
 
@@ -23,6 +22,8 @@ export class Climate {
 
 		this.path = '<%= path %>/assets/'
 
+		this.smallScreen = this.screenTest()
+
 		//var scale = chroma.scale(['red' , 'yellow', 'green', 'blue']).domain([min, max], 10, 'log');
 
 		this.triggers = [{
@@ -30,7 +31,7 @@ export class Climate {
 			"topic" : "Control vizualization position",
 			"v1" : "trigger_add_sticky_viz",
 			"v2" : "trigger_remove_sticky_viz",
-			"v3" : false,
+			"v3" : "trigger_remove_sticky_viz",
 			"v4" : false,
 			"position" : 0,
 			"colours" : [],
@@ -85,6 +86,31 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#f6d787' , '#c7d799', '#ffbce8'],
 			"key" : ["Crop growing areas","Irrigated pastures for grazing","Native vegetation for grazing"],
+			"settings" : [{
+
+				"timeline_map_display" : false,
+
+				"NRM_clusters_boundaries_display" : false,
+
+				"NRM_sub_clusters_boundaries_display" : false,
+
+				"image_map_display" : false,
+
+				"title" : "",
+
+				"key" : ""
+				
+			}]
+		},{
+			"file" : null,
+			"topic" : "Specer",
+			"v1" : false,
+			"v2" : false,
+			"v3" : false,
+			"v4" : false,
+			"position" : 0,
+			"colours" : [],
+			"key" : [],
 			"settings" : [{
 
 				"timeline_map_display" : false,
@@ -656,6 +682,12 @@ export class Climate {
 
 	}
 
+    screenTest() {
+
+        return (window.innerWidth < 740) ? true : false ;
+
+    }
+
     resize() {
 
         var self = this
@@ -668,7 +700,16 @@ export class Climate {
 
             document.body.data = setTimeout( function() { 
 
-                console.log(window.innerWidth)
+                var now = (window.innerWidth < 740) ? true : false ;
+
+                if ( now != self.smallScreen ) {
+
+                    //self.resizeReset(now);
+                    
+                    //(now) ? self.removeCanvas() : self.createCanvas();
+                }
+
+                self.smallScreenn = now
 
             }, 200);
 
@@ -1048,7 +1089,6 @@ export class Climate {
 
     }
 
-
     renderLoop() {
 
         var self = this
@@ -1165,10 +1205,7 @@ export class Climate {
 
             var timelineBottom = timelineTop + timelineHeight
 
-
         	if (window.pageYOffset > timelineTop && ( window.pageYOffset + window.innerHeight) < ( timelineBottom + zone)) {
-
-        		
 
         		var timescale = Math.floor( ( window.pageYOffset - timelineTop ) / pixelsPerYear)
 
@@ -1332,7 +1369,6 @@ export class Climate {
 
 	}
 
-
 	trigger_timeline_close(id) {
 
 		console.log("Closing timeline")
@@ -1472,6 +1508,4 @@ export class Climate {
         }, 400);
 
     }
-
-
 }

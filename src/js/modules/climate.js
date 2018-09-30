@@ -18,7 +18,9 @@ export class Climate {
 
 		this.latitude = -28.5
 
-		this.longitude = 133,
+		this.longitude = 133
+
+		this.position = -1
 
 		this.path = '<%= path %>/assets/'
 
@@ -640,7 +642,7 @@ export class Climate {
 
 		this.resize()
 
-		var files = ["<%= path %>/assets/json/australia.geojson","<%= path %>/assets/json/NRM_clusters.json","<%= path %>/assets/json/NRM_sub_clusters.json","<%= path %>/assets/json/anomolies.json","<%= path %>/assets/json/temp.json","https://interactive.guim.co.uk/docsdata/1Z6G0Hfrb2_YQmFyfXkXe0epHIBZrES2KpaqGmItHTgU.json"];
+		var files = ["<%= path %>/assets/json/NRM_clusters.json","<%= path %>/assets/json/NRM_sub_clusters.json","<%= path %>/assets/json/anomolies.json","<%= path %>/assets/json/temp.json","https://interactive.guim.co.uk/docsdata/1Z6G0Hfrb2_YQmFyfXkXe0epHIBZrES2KpaqGmItHTgU.json"];
 		
 		var promises = [];
 
@@ -652,13 +654,11 @@ export class Climate {
 
 		Promise.all(promises).then(function(values) {
 
-		    self.australia = values[0].features
+		    self.NRM_clusters = values[0]
 
-		    self.NRM_clusters = values[1]
+		    self.NRM_sub_clusters = values[1]
 
-		    self.NRM_sub_clusters = values[2]
-
-		    self.anomolies = values[3]
+		    self.anomolies = values[2]
 
 		    for (var i = 0; i < self.anomolies.length; i++) {
 
@@ -666,7 +666,7 @@ export class Climate {
 
 		    }
 
-		    self.temp = values[4]
+		    self.temp = values[3]
 
 		    for (var i = 0; i < self.temp.length; i++) {
 
@@ -674,7 +674,7 @@ export class Climate {
 
 		    }
 
-		    self.database = values[5].sheets
+		    self.database = values[4].sheets
 
 		    self.setup()
 
@@ -742,12 +742,16 @@ export class Climate {
 
 	    var widthAnomolies = getDimensions($("#anomolies_block"))[0]
 
-	    var heightAnomolies = widthAnomolies * 4
+	    var heightAnomolies = widthAnomolies * 4 ;
 
-		var marginAnomolies = { top: 80, right: 10, bottom: 0, left: 10 }
+	    var margintop = (self.smallScreen) ? 10 : 80 ;
+
+		var marginAnomolies = { top: margintop, right: 5, bottom: 0, left: 5 }
+
+		var xScale = (self.smallScreen) ? widthAnomolies : unit * 4 ;
 
 		this.xScale = d3.scaleLinear()
-			.range([0, unit * 4]);
+			.range([0, xScale -10]);
 
 		this.yScale = d3.scaleBand()
 			.rangeRound([0, heightAnomolies])
@@ -763,7 +767,7 @@ export class Climate {
 
 		var svgAnomolies = d3.select("#anomolies_block")
 			.append("svg")
-			.attr("width", widthAnomolies + marginAnomolies.left + marginAnomolies.right)
+			.attr("width", widthAnomolies)
 			.attr("height", heightAnomolies + marginAnomolies.top + marginAnomolies.bottom)
 			.append("g")
 			.attr("transform", "translate(" + marginAnomolies.left + "," + marginAnomolies.top + ")");
@@ -885,10 +889,10 @@ export class Climate {
 
 	    var heightTemp = widthAnomolies * 4
 
-		var marginTemp = { top: 0, right: 10, bottom: 0, left: 10 }
+		var marginTemp = { top: 0, right: 5, bottom: 0, left: 5 }
 
 		var xWidthScale = d3.scaleLinear()
-			.range([0, widthTemp]);
+			.range([0, widthTemp - 15]);
 
 		var yWidthScale = d3.scaleBand()
 			.rangeRound([0, heightTemp])
@@ -904,7 +908,7 @@ export class Climate {
 
 		var svgTemp = d3.select("#temp_block")
 			.append("svg")
-			.attr("width", widthTemp + marginTemp.left + marginTemp.right)
+			.attr("width", widthTemp)
 			.attr("height", heightTemp + marginTemp.top + marginTemp.bottom)
 			.append("g")
 			.attr("transform", "translate(" + marginTemp.left + "," + marginTemp.top + ")");
@@ -1095,7 +1099,11 @@ export class Climate {
 
         this.requestAnimationFrame = requestAnimationFrame( function() {
 
-        	self.pageYOffset = window.pageYOffset
+        	var pageYOffset = window.pageYOffset ;
+
+        	self.forward = (pageYOffset > self.pageYOffset) ? true : false ;
+
+        	self.pageYOffset = pageYOffset ;
 
             var triggers = document.getElementsByClassName("trigger");
 
@@ -1121,13 +1129,16 @@ export class Climate {
 
 	                		target.position = 3
 
+	                		// console.log("Forward: " + self.forward)
+
 	                		if (target.v3) {
 	                			self[target.v3](i);
+	    
 	                		}
 
 	                		//console.log("Viewport bottom - inview" + i)
 
-	                	}
+	                	}	                	
 
 	               	}
 

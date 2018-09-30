@@ -11,7 +11,7 @@
 		width: calc(100% - 40px);
 		height: 320px;
 		background-repeat: no-repeat;
-		border-bottom: 1px solid darkgrey;
+		border-top: 1px solid darkgrey;
 		z-index: 999;
 		background-color: white;
 	}
@@ -38,7 +38,7 @@
 
 	@include mq($until: tablet) {
 		position: fixed;
-		top: 70px;
+		bottom: 0px;
 		width: calc(100% - 40px);
 	}
 
@@ -66,7 +66,6 @@
     	font-size: 20px;
     	line-height: 24px;
     	padding-top: 10px;
-    	width: calc(100% - 40px);
     }
 
     @include mq($from: tablet) {
@@ -102,12 +101,6 @@
 	width: 100%;
 	box-sizing: border-box;
     z-index: 1;
-
-    @include mq($until: tablet) {
-    	width: calc(100% - 40px);
-    	margin-top: 320px;
-    }
-
 }
 
 .anomolies_block  svg {

@@ -40,6 +40,15 @@ p {
 }
 
 
+.breakout_block, .editorial_container  {
+
+		h2 {
+			font-size: 25px;
+			line-height: 29px;
+		}
+
+}
+
 .editorial_container {
 	width: 100%;
 	max-width: 960px;
@@ -55,6 +64,8 @@ p {
 		@include mq($from: tablet) {
 
 		}
+
+
 
 
 	.bylines {

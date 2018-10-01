@@ -38,21 +38,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-
-			}]
+			"rewind" : false
 		},{
 			"file" : "<%= path %>/assets/maps/graze",
 			"topic" : "Map of farmland",
@@ -63,21 +49,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#f6d787' , '#c7d799'],
 			"key" : ["Crop growing areas","Irrigated pastures for grazing"],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/no-graze",
 			"topic" : "Map of farmland and native vegetation used for grazing",
@@ -88,21 +60,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#f6d787' , '#c7d799', '#ffbce8'],
 			"key" : ["Crop growing areas","Irrigated pastures for grazing","Native vegetation for grazing"],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : null,
 			"topic" : "Specer",
@@ -113,21 +71,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : false
 		},{
 			"file" : "<%= path %>/assets/maps/2013",
 			"topic" : "Map of rainfall deficiency 2013",
@@ -138,21 +82,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/2014",
 			"topic" : "Map of rainfall deficiency 2014",
@@ -163,21 +93,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/2015",
 			"topic" : "Map of rainfall deficiency 2015",
@@ -188,21 +104,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/2016",
 			"topic" : "Map of rainfall deficiency 2016",
@@ -213,21 +115,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/2017",
 			"topic" : "Map of rainfall deficiency 2017",
@@ -238,21 +126,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/soil",
 			"topic" : "Map of soil moisture",
@@ -263,21 +137,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : null,
 			"topic" : "Reset",
@@ -288,21 +148,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : false
 		},{
 			"file" : "settlement",
 			"topic" : "The Settlement drought (1790-1793)",
@@ -313,21 +159,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#475ca8','#8183be','#d3d4ea','white','#e9c3bd', '#df7f7f', '#dc4145'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : "sturts",
 			"topic" : "Sturt's drought (1809-1830)",
@@ -338,21 +170,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#475ca8','#8183be','#d3d4ea','white','#e9c3bd', '#df7f7f', '#dc4145'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : false
 		},{
 			"file" : "great",
 			"topic" : "The Great drought (1809-1814)",
@@ -363,21 +181,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#475ca8','#8183be','#d3d4ea','white','#e9c3bd', '#df7f7f', '#dc4145'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : "goyderline",
 			"topic" : "The Goyder line drought (1861-1866)",
@@ -388,21 +192,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#475ca8','#8183be','#d3d4ea','white','#e9c3bd', '#df7f7f', '#dc4145'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : "federation",
 			"topic" : "Federation drought (1895-1903)",
@@ -413,21 +203,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#475ca8','#8183be','#d3d4ea','white','#e9c3bd', '#df7f7f', '#dc4145'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : null,
 			"topic" : "Trigger timeline",
@@ -438,21 +214,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#f6d787' , '#c7d799', '#ffbce8'],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : false
 		},{
 			"file" : null,
 			"topic" : "Reset",
@@ -463,46 +225,18 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : false
 		},{
-			"file" : null,
-			"topic" : "Reset",
+			"file" : "drought",
+			"topic" : "Map showing where drought will increase",
 			"v1" : false,
 			"v2" : false,
 			"v3" : false,
-			"v4" : false,
+			"v4" : "trigger_vector_map",
 			"position" : 0,
-			"colours" : [],
+			"colours" : ['white', '#f49d75', '#c12c38'],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : "drought",
 			"topic" : "Map showing where drought will increase",
@@ -513,21 +247,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['white', '#f49d75', '#c12c38'],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : "rainfall",
 			"topic" : "Map showing where rainfall will decrease",
@@ -538,21 +258,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['white', '#f49d75', '#c12c38'],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : "temperature",
 			"topic" : "Map shoiwng where temperature will increase",
@@ -563,21 +269,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#c12c38','#c12c38'],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : null,
 			"topic" : "Reset",
@@ -588,21 +280,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : true
 		},{
 			"file" : null,
 			"topic" : "Reset",
@@ -613,21 +291,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
-			"settings" : [{
-
-				"timeline_map_display" : false,
-
-				"NRM_clusters_boundaries_display" : false,
-
-				"NRM_sub_clusters_boundaries_display" : false,
-
-				"image_map_display" : false,
-
-				"title" : "",
-
-				"key" : ""
-				
-			}]
+			"rewind" : false
 		}]
 
 		this.loadData()
@@ -770,6 +434,7 @@ export class Climate {
 			.attr("width", widthAnomolies)
 			.attr("height", heightAnomolies + marginAnomolies.top + marginAnomolies.bottom)
 			.append("g")
+			.attr("id","timeline")
 			.attr("transform", "translate(" + marginAnomolies.left + "," + marginAnomolies.top + ")");
 
 		svgAnomolies.selectAll(".bar")
@@ -1132,8 +797,13 @@ export class Climate {
 	                		// console.log("Forward: " + self.forward)
 
 	                		if (target.v3) {
+
 	                			self[target.v3](i);
 	    
+	                		}
+
+	                		if (!self.forward) {
+	                			console.log("Going backwards 3")
 	                		}
 
 	                		//console.log("Viewport bottom - inview" + i)
@@ -1153,8 +823,16 @@ export class Climate {
 	                		target.position = 4
 
 	                		if (target.v4) {
+
 	                			self[target.v4](i);
+
 	                		}
+
+	                		if (!self.forward) {
+	                			console.log("Going backwards 4")
+	                		}
+
+
 
 	                		//console.log("Viewport bottom - outside" + i)
 
@@ -1174,7 +852,14 @@ export class Climate {
 	                		target.position = 1
 
 	                		if (target.v1) {
+
 	                			self[target.v1](i);
+
+	                		}
+
+
+	                		if (!self.forward) {
+	                			console.log("Going backwards 1")
 	                		}
 
 	                		//console.log("Viewport top - outside" + i)
@@ -1194,8 +879,15 @@ export class Climate {
 	                		target.position = 2
 
 	                		if (target.v2) {
+
 	                			self[target.v2](i);
+
 	                		}
+
+	                		if (!self.forward) {
+	                			console.log("Going backwards 2")
+	                		}
+
 
 	                		//console.log("Viewport top - inview" + i)
 
@@ -1208,15 +900,15 @@ export class Climate {
 
             }
 
-			var timelineHeight = getDimensions($("#anomolies_block"))[1] - 80
+			var timelineHeight = d3.select("#timeline").node().getBoundingClientRect().height - 70 //getDimensions($("#anomolies_block"))[1] - zone
 
-			var pixelsPerYear = timelineHeight / 145
+			var pixelsPerYear = timelineHeight / 140
 
             var timelineTop = window.pageYOffset + $("#anomolies_block").getBoundingClientRect().top
 
             var timelineBottom = timelineTop + timelineHeight
 
-        	if (window.pageYOffset > timelineTop && ( window.pageYOffset + window.innerHeight) < ( timelineBottom + zone)) {
+        	if (window.pageYOffset > timelineTop && ( window.pageYOffset + window.innerHeight) < ( timelineBottom + (window.innerHeight / 2) )) {
 
         		var timescale = Math.floor( ( window.pageYOffset - timelineTop ) / pixelsPerYear)
 
@@ -1224,6 +916,7 @@ export class Climate {
 
         		if (self.currentYear != currentYear && currentYear < 2018) {
         			self.currentYear = currentYear
+        			$("#timeline_map").style.display = "block"
         			$("#timeline_map").style.backgroundImage = "url('" + self.path + "timeline/" + currentYear + ".jpg')";
         			$("#timeline_year").innerHTML = currentYear;
         			self.ctx.clearRect(0, 0, self.canvas.width, self.canvas.height);
@@ -1337,8 +1030,6 @@ export class Climate {
 
 		$('#timeline_map').classList.add("timeline-scroll-fixed");
 
-		$("#timeline_map").style.display = "block"
-
 		$('.keybox').innerHTML = ""
 
 		$('.chart_titles').innerHTML = ""
@@ -1372,7 +1063,7 @@ export class Climate {
 
 	trigger_timeline_open(id) {
 
-		$("#timeline_map").style.display = "block"
+		this.NRM_clusters_boundaries.style("opacity", 0)
 
 		$('#timeline_map').classList.add("timeline-scroll-fixed");
 
@@ -1384,7 +1075,7 @@ export class Climate {
 
 		console.log("Closing timeline")
 
-		$("#timeline_map").style.display = "none"
+		this.NRM_clusters_boundaries.style("opacity", 1)
 
 		$('#timeline_map').classList.remove("timeline-scroll-fixed");
 

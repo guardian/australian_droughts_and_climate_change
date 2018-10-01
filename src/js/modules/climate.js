@@ -131,6 +131,17 @@ export class Climate {
 			"key" : [],
 			"rewind" : true
 		},{
+			"file" : "<%= path %>/assets/maps/2018",
+			"topic" : "Map of rainfall deficiency 2018",
+			"v1" : false,
+			"v2" : false,
+			"v3" : "trigger_image_map",
+			"v4" : false,
+			"position" : 0,
+			"colours" : [],
+			"key" : [],
+			"rewind" : true
+		},{
 			"file" : "<%= path %>/assets/maps/soil",
 			"topic" : "Map of soil moisture",
 			"v1" : false,

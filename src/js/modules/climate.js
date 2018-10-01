@@ -131,6 +131,17 @@ export class Climate {
 			"key" : [],
 			"rewind" : true
 		},{
+			"file" : "<%= path %>/assets/maps/2018",
+			"topic" : "Map of rainfall deficiency 2018",
+			"v1" : false,
+			"v2" : false,
+			"v3" : "trigger_image_map",
+			"v4" : false,
+			"position" : 0,
+			"colours" : [],
+			"key" : [],
+			"rewind" : true
+		},{
 			"file" : "<%= path %>/assets/maps/soil",
 			"topic" : "Map of soil moisture",
 			"v1" : false,
@@ -749,16 +760,32 @@ export class Climate {
 
     	var self = this
 
-    	var originY = self.yScale(year) + 90
-    	var originX = self.xScale(40)
-    	var destY = y + 310
-    	var destX = originX + 420
+    	if (self.smallScreen) {
 
-		//  Draw Curve
-		this.ctx.beginPath();
-		this.ctx.moveTo(originX,originY);
-		this.ctx.quadraticCurveTo(destX, originY, destX, destY);
-		this.ctx.stroke();
+    		let width = d3.select("#timeline").node().getBoundingClientRect().width
+
+			this.ctx.beginPath();
+			this.ctx.moveTo(0,self.yScale(year)+15);
+			this.ctx.lineTo(width,self.yScale(year)+15);
+			this.ctx.stroke();
+
+
+    	} else {
+
+	    	var originY = self.yScale(year) + 90
+	    	var originX = self.xScale(40)
+	    	var destY = y + 310
+	    	var destX = originX + 420
+
+			//  Draw Curve
+			this.ctx.beginPath();
+			this.ctx.moveTo(originX,originY);
+			this.ctx.quadraticCurveTo(destX, originY, destX, destY);
+			this.ctx.stroke();
+
+    	}
+
+
    
 
     }

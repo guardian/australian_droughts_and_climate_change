@@ -87,8 +87,20 @@
 
 .drought_labels {
     font-family: 'Guardian Text Sans Web', TextSans, Arial, sans-serif;
-    font-size: 13px;
+    
     border-bottom: 1px solid darkgrey;
+
+    @include mq($until: tablet) {
+        font-size: 10px;
+    }
+
+    @include mq($from: tablet) {
+        font-size: 13px;
+    }
+
+
+
+
 }
 
 
@@ -119,12 +131,12 @@
     font-family: 'Guardian Text Sans Web', TextSans, Arial, sans-serif;
     color: darkgrey;
 
-    @include mq($until: tablet) {
+    @include mq($until: desktop) {
         margin-top: 200px;
     }
 
 
-    @include mq($from: tablet) {
+    @include mq($from: desktop) {
         margin-left: 55px;
     }
 
@@ -154,12 +166,12 @@
     font-weight: 600;
     box-sizing: border-box;
 
-    @include mq($until: tablet) {
+    @include mq($until: desktop) {
         padding-left: 20px;
         padding-right: 10px;
     }
 
-    @include mq($from: tablet) {
+    @include mq($from: desktop) {
         margin-left: 80px;
     }
 

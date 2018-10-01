@@ -1,3 +1,6 @@
+
+@import "mq";
+
 .fullscreen_container {
 	width: 100%;
 	display: inline-block;
@@ -39,7 +42,6 @@ p {
 	margin: auto;
 }
 
-
 .breakout_block, .editorial_container  {
 
 		h2 {
@@ -57,13 +59,9 @@ p {
 	position: relative;
 	box-sizing: border-box;
 
-		@include mq($until: tablet) {
-			padding: 20px;
-		}
-
-		@include mq($from: tablet) {
-
-		}
+	@include mq($until: desktop) {
+		padding: 20px;
+	}
 
 
 

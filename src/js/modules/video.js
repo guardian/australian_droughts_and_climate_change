@@ -9,7 +9,7 @@ import Hls from 'hls.js'
 
 export var videoPlayer = {
 
-    path: 'https://interactive.guim.co.uk/embed/aus/2018/oct/climate/',
+    path: 'https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/',
 
     mobile: null,
 

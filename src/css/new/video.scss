@@ -85,34 +85,6 @@
 		animation: ARROW_MOVE_MAIN 3s infinite;
 	}
 
-	.titles h1 {
-
-		@include mq($until: tablet) {
-			font-size: 33px;
-			line-height: 37px;
-		}
-
-		@include mq($from: tablet) {
-			font-size: 35px;
-			line-height: 39px;
-		}
-
-	}
-
-	.titles h3 {
-
-		@include mq($until: tablet) {
-			font-size: 20px;
-			line-height: 24px;
-		}
-
-		@include mq($from: tablet) {
-			font-size: 24px;
-			line-height: 28px;
-		}
-
-	}
-
 
 	@-webkit-keyframes ARROW_MOVE_MAIN {
 		0% {

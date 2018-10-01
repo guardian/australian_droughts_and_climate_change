@@ -5,6 +5,7 @@ import chroma from 'chroma-js'
 import * as topojson from "topojson" //npm install topojson --no-bin-links
 import '../modules/raf'
 import smoothscroll from 'smoothscroll-polyfill';
+import { videoPlayer } from '../modules/video'
 
 smoothscroll.polyfill();
 
@@ -23,6 +24,8 @@ export class Climate {
 		this.position = -1
 
 		this.path = '<%= path %>/assets/'
+
+		videoPlayer.init()
 
 		this.smallScreen = this.screenTest()
 
@@ -692,6 +695,8 @@ export class Climate {
 		for (var i = 0; i < triggers.length; i++) {
 			triggers[i].innerHTML = self.triggers[i].topic
 		}
+
+		videoPlayer.initScroll()
 
 		this.renderLoop()
 

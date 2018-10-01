@@ -1,33 +1,9 @@
+@import "mq";
 
 
-@media (min-width: 800px) {
-	.titles {
-		position: absolute;
-		z-index: 1001;
-		left: 50%;
-		bottom: 20%;
-		transform: translateX(-50%);
-		color: white;
-	}
-	.titles h1 {
-		font-size: 3rem;
-		line-height: 3.2rem;
-		font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
-		font-weight: 900;
-		color: #d8e0cb;
-		width: 75%;
-		text-shadow: 1px 1px 10px #1b1b1b;
-	}
-	.titles h3 {
-		margin-top: 20px;
-		width: 75%;
-		font-size: 1.4rem;
-		line-height: 1.6rem;
-	}
-}
+.titles {
 
-@media (max-width: 799px) {
-	.titles {
+	@include mq($until: tablet) {
 		z-index: 1001;
 		position: absolute;
 		top: 20%;
@@ -35,16 +11,56 @@
 		width: 80%;
 		color: white;
 	}
-	.titles h1 {
-		font-size: 3rem;
-		line-height: 3.2rem;
-		font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
-		font-weight: 900;
-		text-shadow: 1px 1px 10px #1b1b1b;
+
+	@include mq($from: tablet) {
+		position: absolute;
+		z-index: 1001;
+		left: 30%;
+		top: 30%;
+		max-width: 600px;
+		transform: translateX(-50%);
+		color: white;
 	}
-	.titles h3 {
+
+}
+
+.titles h1 {
+
+	font-family: "Guardian Egyptian Web", "Guardian Text Egyptian Web", Georgia, serif;
+	font-weight: 900;
+	color: #d8e0cb;
+	text-shadow: 1px 1px 10px #1b1b1b;
+	max-width: 400px;
+
+
+	@include mq($until: tablet) {
+		font-size: 33px;
+		line-height: 37px;
+	}
+
+	@include mq($from: tablet) {
+		font-size: 45px;
+		line-height: 50px;
+	}
+
+}
+
+.titles h3 {
+
+	max-width: 400px;
+
+	@include mq($until: tablet) {
+		font-size: 20px;
+		line-height: 24px;
+		margin-top: 20px;
+	}
+
+	@include mq($from: tablet) {
+		font-size: 24px;
+		line-height: 28px;
 		margin-top: 20px;
 		font-size: 1.4rem;
 		line-height: 2rem;
 	}
+
 }

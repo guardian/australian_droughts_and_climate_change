@@ -1,5 +1,8 @@
 @import "mq";
 
+.new-header {
+	z-index: 99;
+}
 
 #intro_container {
 	width: 100%;
@@ -8,7 +11,7 @@
 	overflow: hidden;
 	margin-bottom: 20px;
 	margin-top: -20px;
-	z-index: 2;
+	z-index: 98;
 
 	.video__container {
 

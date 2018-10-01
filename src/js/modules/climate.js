@@ -720,7 +720,7 @@ export class Climate {
         var canvas = document.createElement('canvas');
         canvas.id = "arrow_of_time";
         canvas.width = getDimensions($("#anomolies_block"))[0]
-        canvas.height = getDimensions($("#anomolies_block"))[1]
+        canvas.height = d3.select("#timeline").node().getBoundingClientRect().height + 80//getDimensions($("#anomolies_block"))[1]
         this.canvas_container = document.getElementById("canvas_container"); 
         this.canvas_container.appendChild(canvas)
         this.canvas = document.getElementById("arrow_of_time");
@@ -913,7 +913,7 @@ export class Climate {
 
             var timelineBottom = timelineTop + timelineHeight
 
-        	if (window.pageYOffset > timelineTop && ( window.pageYOffset + window.innerHeight) < ( timelineBottom + (window.innerHeight / 2) )) {
+        	if (window.pageYOffset > timelineTop && ( window.pageYOffset + window.innerHeight) < ( timelineBottom + (window.innerHeight) )) {
 
         		var timescale = Math.floor( ( window.pageYOffset - timelineTop ) / pixelsPerYear)
 

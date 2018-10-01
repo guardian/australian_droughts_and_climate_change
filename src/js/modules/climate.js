@@ -772,6 +772,12 @@ export class Climate {
 			this.ctx.quadraticCurveTo(destX, originY, destX, destY);
 			this.ctx.stroke();
 
+			this.ctx.beginPath();
+		    this.ctx.moveTo(originX, originY);
+		    this.ctx.lineTo(originX + 5, originY + 5);
+		    this.ctx.lineTo(originX + 5, originY - 5);
+		    this.ctx.fill();
+
     	}
 
 

@@ -83,8 +83,8 @@ export class Climate {
 			"v3" : "trigger_image_map",
 			"v4" : false,
 			"position" : 0,
-			"colours" : [],
-			"key" : [],
+			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
+			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
 			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/2014",
@@ -94,8 +94,8 @@ export class Climate {
 			"v3" : "trigger_image_map",
 			"v4" : false,
 			"position" : 0,
-			"colours" : [],
-			"key" : [],
+			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
+			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
 			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/2015",
@@ -105,8 +105,8 @@ export class Climate {
 			"v3" : "trigger_image_map",
 			"v4" : false,
 			"position" : 0,
-			"colours" : [],
-			"key" : [],
+			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
+			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
 			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/2016",
@@ -116,8 +116,8 @@ export class Climate {
 			"v3" : "trigger_image_map",
 			"v4" : false,
 			"position" : 0,
-			"colours" : [],
-			"key" : [],
+			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
+			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
 			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/2017",
@@ -127,8 +127,8 @@ export class Climate {
 			"v3" : "trigger_image_map",
 			"v4" : false,
 			"position" : 0,
-			"colours" : [],
-			"key" : [],
+			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
+			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
 			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/2018",
@@ -138,8 +138,8 @@ export class Climate {
 			"v3" : "trigger_image_map",
 			"v4" : false,
 			"position" : 0,
-			"colours" : [],
-			"key" : [],
+			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
+			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
 			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/soil",
@@ -149,8 +149,8 @@ export class Climate {
 			"v3" : "trigger_image_map",
 			"v4" : false,
 			"position" : 0,
-			"colours" : [],
-			"key" : [],
+			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
+			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
 			"rewind" : true
 		},{
 			"file" : null,
@@ -171,8 +171,8 @@ export class Climate {
 			"v3" : "trigger_draught_maps",
 			"v4" : false,
 			"position" : 0,
-			"colours" : ['#475ca8','#8183be','#d3d4ea','white','#e9c3bd', '#df7f7f', '#dc4145'],
-			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
+			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
+			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average','lowest on record' ],
 			"rewind" : true
 		},{
 			"file" : "sturts",
@@ -182,7 +182,7 @@ export class Climate {
 			"v3" : "trigger_draught_maps",
 			"v4" : false,
 			"position" : 0,
-			"colours" : ['#475ca8','#8183be','#d3d4ea','white','#e9c3bd', '#df7f7f', '#dc4145'],
+			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
 			"rewind" : false
 		},{
@@ -193,7 +193,7 @@ export class Climate {
 			"v3" : "trigger_draught_maps",
 			"v4" : false,
 			"position" : 0,
-			"colours" : ['#475ca8','#8183be','#d3d4ea','white','#e9c3bd', '#df7f7f', '#dc4145'],
+			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
 			"rewind" : true
 		},{
@@ -204,7 +204,7 @@ export class Climate {
 			"v3" : "trigger_draught_maps",
 			"v4" : false,
 			"position" : 0,
-			"colours" : ['#475ca8','#8183be','#d3d4ea','white','#e9c3bd', '#df7f7f', '#dc4145'],
+			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
 			"rewind" : true
 		},{
@@ -215,7 +215,7 @@ export class Climate {
 			"v3" : "trigger_draught_maps",
 			"v4" : false,
 			"position" : 0,
-			"colours" : ['#475ca8','#8183be','#d3d4ea','white','#e9c3bd', '#df7f7f', '#dc4145'],
+			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
 			"rewind" : true
 		},{

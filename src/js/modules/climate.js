@@ -44,25 +44,25 @@ export class Climate {
 			"rewind" : false
 		},{
 			"file" : "<%= path %>/assets/maps/graze",
-			"topic" : "Map of farmland",
+			"topic" : "Farmland in Australia",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_image_map",
 			"v4" : false,
 			"position" : 0,
-			"colours" : ['#f6d787' , '#c7d799'],
-			"key" : ["Crop growing areas","Irrigated pastures for grazing"],
+			"colours" : ['#FFD37F','#C7D79E',"#7AB6F5"],
+			"key" : ["Crop growing areas","Modified pastures for grazing","Irrigated farmland"],
 			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/no-graze",
-			"topic" : "Map of farmland and native vegetation used for grazing",
+			"topic" : "Farmland and native vegetation used for grazing",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_image_map",
 			"v4" : false,
 			"position" : 0,
-			"colours" : ['#f6d787' , '#c7d799', '#ffbce8'],
-			"key" : ["Crop growing areas","Irrigated pastures for grazing","Native vegetation for grazing"],
+			"colours" : ['#FFD37F','#C7D79E',"#7AB6F5","#FFBEE8"],
+			"key" : ["Crop growing areas","Modified pastures for grazing","Irrigated farmland","Native vegetation for grazing"],
 			"rewind" : true
 		},{
 			"file" : null,
@@ -77,7 +77,7 @@ export class Climate {
 			"rewind" : false
 		},{
 			"file" : "<%= path %>/assets/maps/2013",
-			"topic" : "Map of rainfall deficiency 2013",
+			"topic" : "Rainfall deficiency 2013",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_image_map",
@@ -88,7 +88,7 @@ export class Climate {
 			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/2014",
-			"topic" : "Map of rainfall deficiency 2014",
+			"topic" : "Rainfall deficiency 2014",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_image_map",
@@ -99,7 +99,7 @@ export class Climate {
 			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/2015",
-			"topic" : "Map of rainfall deficiency 2015",
+			"topic" : "Rainfall deficiency 2015",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_image_map",
@@ -110,7 +110,7 @@ export class Climate {
 			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/2016",
-			"topic" : "Map of rainfall deficiency 2016",
+			"topic" : "Rainfall deficiency 2016",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_image_map",
@@ -121,7 +121,7 @@ export class Climate {
 			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/2017",
-			"topic" : "Map of rainfall deficiency 2017",
+			"topic" : "Rainfall deficiency 2017",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_image_map",
@@ -132,7 +132,7 @@ export class Climate {
 			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/2018",
-			"topic" : "Map of rainfall deficiency 2018",
+			"topic" : "Rainfall deficiency 2018",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_image_map",
@@ -143,7 +143,7 @@ export class Climate {
 			"rewind" : true
 		},{
 			"file" : "<%= path %>/assets/maps/soil",
-			"topic" : "Map of soil moisture",
+			"topic" : "Relative root zone soil moisture 2018",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_image_map",
@@ -187,7 +187,7 @@ export class Climate {
 			"rewind" : false
 		},{
 			"file" : "great",
-			"topic" : "The Great drought (1809-1814)",
+			"topic" : "The great drought (1809-1814)",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_draught_maps",
@@ -242,18 +242,7 @@ export class Climate {
 			"rewind" : false
 		},{
 			"file" : "drought",
-			"topic" : "Map showing where drought will increase",
-			"v1" : false,
-			"v2" : false,
-			"v3" : false,
-			"v4" : "trigger_vector_map",
-			"position" : 0,
-			"colours" : ['white', '#f49d75', '#c12c38'],
-			"key" : [],
-			"rewind" : true
-		},{
-			"file" : "drought",
-			"topic" : "Map showing where drought will increase",
+			"topic" : "Where drought is projected to increase",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_vector_map",
@@ -264,7 +253,7 @@ export class Climate {
 			"rewind" : true
 		},{
 			"file" : "rainfall",
-			"topic" : "Map showing where rainfall will decrease",
+			"topic" : "Where rainfall is projected to change",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_vector_map",
@@ -275,7 +264,7 @@ export class Climate {
 			"rewind" : true
 		},{
 			"file" : "temperature",
-			"topic" : "Map shoiwng where temperature will increase",
+			"topic" : "Where temperature is projected to increase",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_vector_map",

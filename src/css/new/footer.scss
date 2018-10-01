@@ -11,6 +11,10 @@
       color: #2a4006;
       margin: 1em 10px; }
 
+      .credits {
+        padding: 10px;
+      }
+
     .interactive .footer:after {
       content: "";
       display: table;
@@ -30,6 +34,7 @@
 
         .credits_read_more {
         width: 100%;
+
         clear:both;
         }
     .interactive .footer .footer-grid {

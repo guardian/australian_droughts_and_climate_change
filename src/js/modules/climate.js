@@ -817,19 +817,13 @@ export class Climate {
 
 	                		// console.log("Forward: " + self.forward)
 
-	                		if (target.v3) {
+	                		if (target.v3 && self.forward) {
 
 	                			self[target.v3](i);
 	    
 	                		}
 
-	                		if (!self.forward) {
-	                			console.log("Going backwards 3")
-	                		}
-
-	                		//console.log("Viewport bottom - inview" + i)
-
-	                	}	                	
+	                	}              	
 
 	               	}
 
@@ -843,19 +837,21 @@ export class Climate {
 
 	                		target.position = 4
 
-	                		if (target.v4) {
+	                		if (target.v4 && self.forward) {
 
 	                			self[target.v4](i);
 
 	                		}
 
-	                		if (!self.forward) {
-	                			console.log("Going backwards 4")
+	                		if (!self.forward && i > 0) {
+
+	                			if (self.triggers[i-1].v3 && self.triggers[i-1].rewind ) {
+
+	                				self[self.triggers[i-1].v3](i - 1);
+
+	                			}
+	                			
 	                		}
-
-
-
-	                		//console.log("Viewport bottom - outside" + i)
 
 	                	}
 
@@ -878,13 +874,6 @@ export class Climate {
 
 	                		}
 
-
-	                		if (!self.forward) {
-	                			console.log("Going backwards 1")
-	                		}
-
-	                		//console.log("Viewport top - outside" + i)
-
 	                	}
 
 	               	}
@@ -905,17 +894,9 @@ export class Climate {
 
 	                		}
 
-	                		if (!self.forward) {
-	                			console.log("Going backwards 2")
-	                		}
-
-
-	                		//console.log("Viewport top - inview" + i)
-
 	                	}
 
 	               	}  
-
 
                 }
 
@@ -980,18 +961,6 @@ export class Climate {
 		$("#image_inside").style.display = "none"
 
 		var targets = self.triggers[id].file
-
-		/*
-
-		self.triggers[id].key = []
-
-		for (var i = 0; i < self.database[targets].length; i++) {
-
-			(self.triggers[id].key.indexOf(self.database[targets][i].decile) === -1) ? self.triggers[id].key.push(self.database[targets][i].decile) : "" ;
-			
-		}
-
-		*/
 
 		function clean(string) {
 
@@ -1107,6 +1076,10 @@ export class Climate {
 	trigger_image_map(id) {
 
 		var self = this
+
+		this.NRM_sub_clusters_boundaries.style("opacity", 0)
+
+		this.NRM_clusters_boundaries.style("opacity", 0)
 
 		$("#image_inside").style.display = "block"
 

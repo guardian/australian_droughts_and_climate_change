@@ -33,7 +33,6 @@
 #image_block {
     width: 100%;
     margin: auto;
-    max-width: 960px;
 
     @include mq($until: tablet) {
         margin-top: 40px;
@@ -44,7 +43,6 @@
 #map_block {
     width: 100%;
     margin: auto;
-    max-width: 960px;
 }
 
 #image_block img {

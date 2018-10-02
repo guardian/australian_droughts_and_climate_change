@@ -446,16 +446,10 @@ export class Climate {
 
             document.body.data = setTimeout( function() { 
 
-                var now = (window.innerWidth < 740) ? true : false ;
+                self.settings.smallScreen  = (window.innerWidth < 740) ? true : false ;
 
-                if ( now != self.settings.smallScreen ) {
+                self.removeCanvas()
 
-                    //self.resizeReset(now);
-                    
-                    //(now) ? self.removeCanvas() : self.createCanvas();
-                }
-
-                self.settings.smallScreen = now
 
             }, 200);
 
@@ -785,17 +779,6 @@ export class Climate {
 
 	}
 
-    cancelAFrame() {
-
-        var self = this
-            
-        if (self.requestAnimationFrame) {
-           window.cancelAnimationFrame(self.requestAnimationFrame);
-           self.requestAnimationFrame = undefined;
-        }
-
-    }
-
     createCanvas() {
 
         var self = this
@@ -823,6 +806,11 @@ export class Climate {
 
         // Remove canvas
         d3.select("#arrow_of_time").remove()
+        d3.select("#map svg").remove()
+        d3.select("#anomolies_block svg").remove()
+        d3.select("#temp_block svg").remove()
+        
+        self.setup()
 
     }
 
@@ -1299,7 +1287,7 @@ export class Climate {
 
 		}
 
-		var html = "<ul><li><strong>Key</strong></li>" ;
+		var html = "<ul><li><strong>" + self.triggers[id].legend + "</strong></li>" ;
 
 		for (var i = 0; i < self.triggers[id].key.length; i++) {
 

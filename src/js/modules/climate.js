@@ -61,6 +61,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
+			"legend" : "Key",
 			"rewind" : false
 		},{
 			"file" : "maps/graze",
@@ -72,6 +73,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#FFD37F','#C7D79E',"#7AB6F5"],
 			"key" : ["Crop growing areas","Modified pastures for grazing","Irrigated farmland"],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "maps/no-graze",
@@ -83,6 +85,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#FFD37F','#C7D79E',"#7AB6F5","#FFBEE8"],
 			"key" : ["Crop growing areas","Modified pastures for grazing","Irrigated farmland","Native vegetation used for grazing"],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : null,
@@ -105,6 +108,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "maps/2014",
@@ -116,6 +120,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "maps/2015",
@@ -127,6 +132,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "maps/2016",
@@ -138,6 +144,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "maps/2017",
@@ -149,6 +156,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "maps/2018",
@@ -160,6 +168,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "maps/soil",
@@ -171,6 +180,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : null,
@@ -182,6 +192,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
+			"legend" : "Key",
 			"rewind" : false
 		},{
 			"file" : "settlement",
@@ -193,6 +204,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average','lowest on record' ],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "sturts",
@@ -204,6 +216,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
+			"legend" : "Key",
 			"rewind" : false
 		},{
 			"file" : "great",
@@ -215,6 +228,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "goyderline",
@@ -226,6 +240,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "federation",
@@ -237,6 +252,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : null,
@@ -248,6 +264,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#f6d787' , '#c7d799', '#ffbce8'],
 			"key" : [],
+			"legend" : "Key",
 			"rewind" : false
 		},{
 			"file" : null,
@@ -259,6 +276,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
+			"legend" : "Key",
 			"rewind" : false
 		},{
 			"file" : "drought",
@@ -270,6 +288,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['white', '#f49d75', '#c12c38'],
 			"key" : [],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "rainfall",
@@ -281,6 +300,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['white', '#f49d75', '#cc3399'],
 			"key" : [],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "temperature",
@@ -292,6 +312,19 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#c12c38','#c12c38'],
 			"key" : [],
+			"legend" : "Key",
+			"rewind" : true
+		},{
+			"file" : "temperature",
+			"topic" : "Where temperature is projected to increase",
+			"v1" : false,
+			"v2" : false,
+			"v3" : "trigger_vector_map",
+			"v4" : false,
+			"position" : 0,
+			"colours" : ['#c12c38','#c12c38'],
+			"key" : [],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : null,
@@ -303,17 +336,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
-			"rewind" : true
-		},{
-			"file" : null,
-			"topic" : "Reset",
-			"v1" : false,
-			"v2" : false,
-			"v3" : "trigger_hide",
-			"v4" : false,
-			"position" : 0,
-			"colours" : [],
-			"key" : [],
+			"legend" : "Key",
 			"rewind" : false
 		}]
 
@@ -423,16 +446,10 @@ export class Climate {
 
             document.body.data = setTimeout( function() { 
 
-                var now = (window.innerWidth < 740) ? true : false ;
+                self.settings.smallScreen  = (window.innerWidth < 740) ? true : false ;
 
-                if ( now != self.settings.smallScreen ) {
+                self.removeCanvas()
 
-                    //self.resizeReset(now);
-                    
-                    //(now) ? self.removeCanvas() : self.createCanvas();
-                }
-
-                self.settings.smallScreen = now
 
             }, 200);
 
@@ -762,17 +779,6 @@ export class Climate {
 
 	}
 
-    cancelAFrame() {
-
-        var self = this
-            
-        if (self.requestAnimationFrame) {
-           window.cancelAnimationFrame(self.requestAnimationFrame);
-           self.requestAnimationFrame = undefined;
-        }
-
-    }
-
     createCanvas() {
 
         var self = this
@@ -800,8 +806,11 @@ export class Climate {
 
         // Remove canvas
         d3.select("#arrow_of_time").remove()
-
-        console.log("The canvas has been removed")
+        d3.select("#map svg").remove()
+        d3.select("#anomolies_block svg").remove()
+        d3.select("#temp_block svg").remove()
+        
+        self.setup()
 
     }
 
@@ -989,18 +998,11 @@ export class Climate {
 			        self.ractive.set('timeline_map_src', self.settings.timeline_map_src)
 			        self.ractive.set('timeline_year', self.settings.timeline_year)
 
-
-        			//$("#timeline_map").style.display = "block"
-        			// $("#timeline_map").style.backgroundImage = "url('" + self.path + "timeline/" + currentYear + ".jpg')";
-        			//$("#timeline_year").innerHTML = currentYear;
-
         			self.ctx.clearRect(0, 0, self.canvas.width, self.canvas.height);
         			self.renderBoxes(currentYear, (window.pageYOffset - timelineTop))
         		}
 
         		if (currentYear > 2018) {
-
-        			//$("#timeline_map").style.display = "none"
 
         			self.settings.timeline_map_display = false
         			self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
@@ -1070,7 +1072,7 @@ export class Climate {
 
 		}
 
-		var html = "<ul><li><strong>Key</strong></li>" ;
+		var html = "<ul><li><strong>" + self.triggers[id].legend + "</strong></li>" ;
 
 		for (var i = 0; i < self.triggers[id].key.length; i++) {
 
@@ -1086,9 +1088,6 @@ export class Climate {
 
 		this.NRM_clusters_boundaries.style("fill", function(d) { return colouriser(d.properties.label)})
 
-		//this.NRM_clusters_boundaries.style("opacity", 1)
-
-		//$("#image_inside").style.display = "none"
 		self.settings.map_display = false
 		self.settings.NRM_clusters_display = true
 		self.settings.NRM_sub_clusters_display = false
@@ -1104,12 +1103,6 @@ export class Climate {
 
 		var self = this
 
-		
-
-		console.log("Now add_sticky_timeline")
-
-
-
 		$('.keybox').innerHTML = ""
 
 		$('.chart_titles').innerHTML = ""
@@ -1122,49 +1115,41 @@ export class Climate {
 		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
 		self.ractive.set('timeline_fix', self.settings.timeline_fix)
 
-		$('.anomolies_header').classList.add("graph-scroll-fixed");
-
-		$('#timeline_map').classList.add("timeline-scroll-fixed");
-
-
 	}
 
-        /*
+    /*
 
-		self.settings.map_display
-		self.settings.map_src
-		self.settings.timeline_map_display
-		self.settings.timeline_map_src
-		self.settings.timeline_map_fix
-		self.settings.timeline_year
-		self.settings.NRM_clusters_display
-		self.settings.NRM_sub_clusters_display
-		self.settings.vizualization_fix
-		self.settings.timeline_fix
+	self.settings.map_display
+	self.settings.map_src
+	self.settings.timeline_map_display
+	self.settings.timeline_map_src
+	self.settings.timeline_map_fix
+	self.settings.timeline_year
+	self.settings.NRM_clusters_display
+	self.settings.NRM_sub_clusters_display
+	self.settings.vizualization_fix
+	self.settings.timeline_fix
 
-        self.ractive.set('map_display', self.settings.map_display)
-        self.ractive.set('map_src', self.settings.map_src)
-        self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
-        self.ractive.set('timeline_map_src', self.settings.timeline_map_src)
-        self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
-        self.ractive.set('timeline_year', self.settings.timeline_year)
-        self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
-        self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
-        self.ractive.set('vizualization_fix', self.settings.vizualization_fix)
-        self.ractive.set('timeline_fix', self.settings.timeline_fix)
+    self.ractive.set('map_display', self.settings.map_display)
+    self.ractive.set('map_src', self.settings.map_src)
+    self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
+    self.ractive.set('timeline_map_src', self.settings.timeline_map_src)
+    self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
+    self.ractive.set('timeline_year', self.settings.timeline_year)
+    self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
+    self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
+    self.ractive.set('vizualization_fix', self.settings.vizualization_fix)
+    self.ractive.set('timeline_fix', self.settings.timeline_fix)
 
-        */
+    */
 
 
 	trigger_remove_sticky_timeline(id) {
 
 		var self = this
 
-		$('.anomolies_header').classList.remove("graph-scroll-fixed");
-		//$("#timeline_map").style.display = "none"
-
 		self.settings.timeline_map_display = false
-		self.settings.timeline_fix = true
+		self.settings.timeline_fix = false
 
 		self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
 		self.ractive.set('timeline_fix', self.settings.timeline_fix)
@@ -1180,9 +1165,6 @@ export class Climate {
 		self.settings.timeline_map_fix = true
 		self.settings.NRM_clusters_display = false
 
-		$('#timeline_map').classList.add("timeline-scroll-fixed");
-		//self.NRM_clusters_boundaries.style("opacity", 0)
-
 		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
 		self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
 
@@ -1190,8 +1172,6 @@ export class Climate {
 
 	trigger_map_remove_sticky_timeline(id) {
 		
-		$('#timeline_map').classList.remove("timeline-scroll-fixed");
-
 		self.settings.timeline_map_fix = false
 		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
 
@@ -1211,21 +1191,11 @@ export class Climate {
 		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
 		self.ractive.set('timeline_fix', self.settings.timeline_fix)
 
-		//self.NRM_clusters_boundaries.style("opacity", 0)
-		$('#timeline_map').classList.add("timeline-scroll-fixed");
-		$('.anomolies_header').classList.add("graph-scroll-fixed");
-
 	}
 
 	trigger_timeline_close(id) {
 
 		var self = this
-
-		//this.NRM_clusters_boundaries.style("opacity", 1)
-
-		//$('#timeline_map').classList.remove("timeline-scroll-fixed");
-
-		//$('.anomolies_header').classList.remove("graph-scroll-fixed");
 
 		self.settings.NRM_clusters_display = true
 		self.settings.NRM_sub_clusters_display = false
@@ -1247,7 +1217,7 @@ export class Climate {
 
 		if (self.triggers[id].key.length > 0) {
 
-			html += "<ul><li><strong>Key</strong></li>" ;
+			html += "<ul><li><strong>" + self.triggers[id].legend + "</strong></li>" ;
 
 			for (var i = 0; i < self.triggers[id].key.length; i++) {
 
@@ -1268,15 +1238,6 @@ export class Climate {
         self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
         self.ractive.set('map_display', self.settings.map_display)
         self.ractive.set('map_src', self.settings.map_src)
-
-
-		//this.NRM_sub_clusters_boundaries.style("opacity", 0)
-
-		//this.NRM_clusters_boundaries.style("opacity", 0)
-
-		// $("#image_inside").style.display = "block"
-
-		// $("#image_inside").style.backgroundImage = "url('" + self.triggers[id].file + ".jpg')";
 
 		$('.keybox').innerHTML = html
 
@@ -1326,7 +1287,7 @@ export class Climate {
 
 		}
 
-		var html = "<ul><li><strong>Key</strong></li>" ;
+		var html = "<ul><li><strong>" + self.triggers[id].legend + "</strong></li>" ;
 
 		for (var i = 0; i < self.triggers[id].key.length; i++) {
 
@@ -1338,13 +1299,9 @@ export class Climate {
 
 		this.NRM_sub_clusters_boundaries.style("fill", function(d) { return colouriser(d.properties.label)})
 
-		//this.NRM_sub_clusters_boundaries.style("opacity", 1)
-
 		$('.chart_titles').innerHTML = self.triggers[id].topic
 
 		$('.keybox').innerHTML = html
-
-		// $("#image_inside").style.display = "none"
 
 		self.settings.map_display = false
 		self.settings.NRM_sub_clusters_display = true
@@ -1360,20 +1317,11 @@ export class Climate {
 
 		var self = this
 
-		//this.NRM_sub_clusters_boundaries.style("opacity", 0)
-
-		//this.NRM_clusters_boundaries.style("opacity", 0)
-
-		//$("#timeline_map").style.display = "none"
-
-		//$("#image_inside").style.display = "none"
-
 		self.settings.NRM_clusters_display = false
 		self.settings.NRM_sub_clusters_display = false
 
         self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
         self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
-
 
 		$('.chart_titles').innerHTML = ""
 

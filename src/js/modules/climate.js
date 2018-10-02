@@ -398,7 +398,19 @@ export class Climate {
 
 	loadImages() {
 
+		var mapImages = ['maps/2013','maps/2014','maps/2015','maps/2016','maps/2017','maps/2018','maps/graze','maps/no-graze','maps/soil']
+
 		var self = this
+
+
+		mapImages.forEach( function (loc) {
+
+			let image = new Image();
+
+			image.src = self.settings.filepath + loc + ".jpg"
+
+
+		})
 
 		for (var i = 1900; i < 2018; i++) {
 
@@ -408,6 +420,7 @@ export class Climate {
 
 			self.preloaded.push(image)
 		}
+
 
 	}
 

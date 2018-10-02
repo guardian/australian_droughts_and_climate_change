@@ -1,6 +1,8 @@
+import template from '../../templates/template.html'
 import * as d3 from 'd3'
 import { Toolbelt } from './toolbelt'
 import { $, $$, round, numberWithCommas, wait, getDimensions } from '../modules/util'
+import Ractive from 'ractive'
 import chroma from 'chroma-js'
 import * as topojson from "topojson" //npm install topojson --no-bin-links
 import '../modules/raf'
@@ -23,13 +25,31 @@ export class Climate {
 
 		this.position = -1
 
-		this.path = '<%= path %>/assets/'
+		this.settings = {
 
-		videoPlayer.init()
+			"map_display" : true,
 
-		this.smallScreen = this.screenTest()
+			"map_src" : "maps/graze.jpg",
 
-		//var scale = chroma.scale(['red' , 'yellow', 'green', 'blue']).domain([min, max], 10, 'log');
+			"timeline_map_display" : false,
+
+			"timeline_map_src" : "timeline/1900.jpg",
+
+			"timeline_year" : 1900,
+
+			"NRM_clusters_display" : false,
+
+			"NRM_sub_clusters_display" : false,
+
+			"title" : "Map of farmland and native vegetation used for grazing",
+
+			"key" : "",
+
+			"smallScreen" : this.screenTest(),
+
+			"filepath" : "<%= path %>/assets/"
+
+		}
 
 		this.triggers = [{
 			"file" : null,
@@ -43,7 +63,7 @@ export class Climate {
 			"key" : [],
 			"rewind" : false
 		},{
-			"file" : "<%= path %>/assets/maps/graze",
+			"file" : "maps/graze",
 			"topic" : "Farmland in Australia",
 			"v1" : false,
 			"v2" : false,
@@ -54,7 +74,7 @@ export class Climate {
 			"key" : ["Crop growing areas","Modified pastures for grazing","Irrigated farmland"],
 			"rewind" : true
 		},{
-			"file" : "<%= path %>/assets/maps/no-graze",
+			"file" : "maps/no-graze",
 			"topic" : "Farmland and native vegetation used for grazing",
 			"v1" : false,
 			"v2" : false,
@@ -76,7 +96,7 @@ export class Climate {
 			"key" : [],
 			"rewind" : false
 		},{
-			"file" : "<%= path %>/assets/maps/2013",
+			"file" : "maps/2013",
 			"topic" : "Rainfall deficiency 2013",
 			"v1" : false,
 			"v2" : false,
@@ -87,7 +107,7 @@ export class Climate {
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
 			"rewind" : true
 		},{
-			"file" : "<%= path %>/assets/maps/2014",
+			"file" : "maps/2014",
 			"topic" : "Rainfall deficiency 2014",
 			"v1" : false,
 			"v2" : false,
@@ -98,7 +118,7 @@ export class Climate {
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
 			"rewind" : true
 		},{
-			"file" : "<%= path %>/assets/maps/2015",
+			"file" : "maps/2015",
 			"topic" : "Rainfall deficiency 2015",
 			"v1" : false,
 			"v2" : false,
@@ -109,7 +129,7 @@ export class Climate {
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
 			"rewind" : true
 		},{
-			"file" : "<%= path %>/assets/maps/2016",
+			"file" : "maps/2016",
 			"topic" : "Rainfall deficiency 2016",
 			"v1" : false,
 			"v2" : false,
@@ -120,7 +140,7 @@ export class Climate {
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
 			"rewind" : true
 		},{
-			"file" : "<%= path %>/assets/maps/2017",
+			"file" : "maps/2017",
 			"topic" : "Rainfall deficiency 2017",
 			"v1" : false,
 			"v2" : false,
@@ -131,7 +151,7 @@ export class Climate {
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
 			"rewind" : true
 		},{
-			"file" : "<%= path %>/assets/maps/2018",
+			"file" : "maps/2018",
 			"topic" : "Rainfall deficiency 2018",
 			"v1" : false,
 			"v2" : false,
@@ -142,7 +162,7 @@ export class Climate {
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
 			"rewind" : true
 		},{
-			"file" : "<%= path %>/assets/maps/soil",
+			"file" : "maps/soil",
 			"topic" : "Relative root zone soil moisture 2018",
 			"v1" : false,
 			"v2" : false,
@@ -343,7 +363,7 @@ export class Climate {
 
 		    self.database = values[4].sheets
 
-		    self.setup()
+		    self.ractivate()
 
 		});
 
@@ -352,6 +372,61 @@ export class Climate {
     screenTest() {
 
         return (window.innerWidth < 740) ? true : false ;
+
+    }
+
+    ractivate() {
+
+        var self = this
+
+        this.ractive = new Ractive({
+            el: '#app',
+            data: self.settings,
+            template: template
+        })
+
+        this.setup()
+
+        this.resize()
+
+        /*
+
+		this.settings.map_display
+		this.settings.map_src
+		this.settings.timeline_map_display
+		this.settings.timeline_map_src
+		this.settings.timeline_year
+		this.settings.NRM_clusters_display
+		this.settings.NRM_sub_clusters_display
+
+        self.ractive.set('map_display', self.settings.map_display)
+        self.ractive.set('map_src', self.settings.map_src)
+        self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
+        self.ractive.set('timeline_map_src', self.settings.timeline_map_src)
+        self.ractive.set('timeline_year', self.settings.timeline_year)
+        self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
+        self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
+
+        */
+
+        /*
+
+        this.ractive.on( 'social', function ( context, channel ) {
+
+            var title = "Deaths inside: Indigenous Australian deaths in custody" ;
+
+            var params = (channel==='facebook') ? 'fb' : 'tw' ;
+
+            var message = 'The Deaths inside database tracks every Indigenous death in custody in Australia from 2008 - 2018.'
+
+            let sharegeneral = share(title, "http://theguardian.com/deathsinside?CMP=share_btn_" + params, 'https://i.guim.co.uk/img/media/9d46340d9bade310e24918accd90fb6e2cdeef0e/0_0_1300_780/master/1300.jpg?width=1200&height=630&quality=85&auto=format&usm=12&fit=crop&crop=faces%2Centropy&bm=normal&ba=bottom%2Cleft&blend64=aHR0cHM6Ly9hc3NldHMuZ3VpbS5jby51ay9pbWFnZXMvb3ZlcmxheXMvZDM1ODZhNWVmNTc4MTc1NmQyMWEzYjYzNWU1MTcxNDEvdGctZGVmYXVsdC5wbmc&s=3f3e094b6823f3a0fc63a79fa4269ec5', '', '#DeathsInside', message);
+
+            sharegeneral(channel);
+
+        });
+
+        */
+
 
     }
 
@@ -369,14 +444,14 @@ export class Climate {
 
                 var now = (window.innerWidth < 740) ? true : false ;
 
-                if ( now != self.smallScreen ) {
+                if ( now != self.settings.smallScreen ) {
 
                     //self.resizeReset(now);
                     
                     //(now) ? self.removeCanvas() : self.createCanvas();
                 }
 
-                self.smallScreenn = now
+                self.settings.smallScreen = now
 
             }, 200);
 
@@ -387,6 +462,8 @@ export class Climate {
 	setup() {
 
 		var self = this
+
+		videoPlayer.init()
 
 	    d3.selection.prototype.moveToFront = function() {  
 	      return this.each(function(){
@@ -411,11 +488,11 @@ export class Climate {
 
 	    var heightAnomolies = widthAnomolies * 4 ;
 
-	    var margintop = (self.smallScreen) ? 10 : 80 ;
+	    var margintop = (self.settings.smallScreen) ? 10 : 80 ;
 
 		var marginAnomolies = { top: margintop, right: 5, bottom: 0, left: 5 }
 
-		var xScale = (self.smallScreen) ? widthAnomolies : unit * 4 ;
+		var xScale = (self.settings.smallScreen) ? widthAnomolies : unit * 4 ;
 
 		this.xScale = d3.scaleLinear()
 			.range([0, xScale -10]);
@@ -749,7 +826,7 @@ export class Climate {
 
     	var self = this
 
-    	if (self.smallScreen) {
+    	if (self.settings.smallScreen) {
 
     		let width = d3.select("#timeline").node().getBoundingClientRect().width
 
@@ -757,7 +834,6 @@ export class Climate {
 			this.ctx.moveTo(0,self.yScale(year)+15);
 			this.ctx.lineTo(width,self.yScale(year)+15);
 			this.ctx.stroke();
-
 
     	} else {
 
@@ -779,9 +855,6 @@ export class Climate {
 		    this.ctx.fill();
 
     	}
-
-
-   
 
     }
 
@@ -924,15 +997,31 @@ export class Climate {
 
         		if (self.currentYear != currentYear && currentYear < 2018) {
         			self.currentYear = currentYear
-        			$("#timeline_map").style.display = "block"
-        			$("#timeline_map").style.backgroundImage = "url('" + self.path + "timeline/" + currentYear + ".jpg')";
-        			$("#timeline_year").innerHTML = currentYear;
+
+        			self.settings.timeline_map_display = true
+        			self.settings.timeline_map_src = self.settings.filepath + "timeline/" + currentYear + ".jpg"
+        			self.settings.timeline_year = currentYear
+
+			        self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
+			        self.ractive.set('timeline_map_src', self.settings.timeline_map_src)
+			        self.ractive.set('timeline_year', self.settings.timeline_year)
+
+
+        			//$("#timeline_map").style.display = "block"
+        			// $("#timeline_map").style.backgroundImage = "url('" + self.path + "timeline/" + currentYear + ".jpg')";
+        			//$("#timeline_year").innerHTML = currentYear;
+
         			self.ctx.clearRect(0, 0, self.canvas.width, self.canvas.height);
         			self.renderBoxes(currentYear, (window.pageYOffset - timelineTop))
         		}
 
         		if (currentYear > 2018) {
-        			$("#timeline_map").style.display = "none"
+
+        			//$("#timeline_map").style.display = "none"
+
+        			self.settings.timeline_map_display = false
+        			self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
+
         			self.ctx.clearRect(0, 0, self.canvas.width, self.canvas.height);
         		}
 
@@ -950,6 +1039,9 @@ export class Climate {
 
 		element.classList.add("graph-scroll-fixed");
 
+		this.settings.vizualization_fix = true
+		// self.ractive.set('vizualization_fix', self.settings.vizualization_fix)
+
 	}
 
 	trigger_remove_sticky_viz(id) {
@@ -958,13 +1050,14 @@ export class Climate {
 
 		element.classList.remove("graph-scroll-fixed");
 
+		this.settings.vizualization_fix = false
+		// self.ractive.set('vizualization_fix', self.settings.vizualization_fix)
+
 	}
 
 	trigger_draught_maps(id) {
 
 		var self = this
-
-		$("#image_inside").style.display = "none"
 
 		var targets = self.triggers[id].file
 
@@ -1010,35 +1103,92 @@ export class Climate {
 
 		$('.keybox').innerHTML = html
 
+		$('.chart_titles').innerHTML = self.triggers[id].topic
+
 		this.NRM_clusters_boundaries.style("fill", function(d) { return colouriser(d.properties.label)})
 
 		this.NRM_clusters_boundaries.style("opacity", 1)
 
-		$('.chart_titles').innerHTML = self.triggers[id].topic
+		//$("#image_inside").style.display = "none"
+		self.settings.map_display = false
+		self.settings.NRM_clusters_display = true
+		self.settings.NRM_sub_clusters_display = false
+		
+		self.ractive.set('map_display', self.settings.map_display)
+        self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
+        self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
+
 
 	}
 
 	trigger_add_sticky_timeline(id) {
 
+		var self = this
+
+		
+
 		console.log("Now add_sticky_timeline")
 
-		$('.anomolies_header').classList.add("graph-scroll-fixed");
 
-		$('#timeline_map').classList.add("timeline-scroll-fixed");
 
 		$('.keybox').innerHTML = ""
 
 		$('.chart_titles').innerHTML = ""
 
+		self.settings.timeline_map_fix = true
+		self.settings.timeline_fix = true
+		self.settings.timeline_map_display = true
+
+		self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
+		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
+		self.ractive.set('timeline_fix', self.settings.timeline_fix)
+
+		$('.anomolies_header').classList.add("graph-scroll-fixed");
+
+		$('#timeline_map').classList.add("timeline-scroll-fixed");
+
+
 	}
+
+        /*
+
+		self.settings.map_display
+		self.settings.map_src
+		self.settings.timeline_map_display
+		self.settings.timeline_map_src
+		self.settings.timeline_map_fix
+		self.settings.timeline_year
+		self.settings.NRM_clusters_display
+		self.settings.NRM_sub_clusters_display
+		self.settings.vizualization_fix
+		self.settings.timeline_fix
+
+        self.ractive.set('map_display', self.settings.map_display)
+        self.ractive.set('map_src', self.settings.map_src)
+        self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
+        self.ractive.set('timeline_map_src', self.settings.timeline_map_src)
+        self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
+        self.ractive.set('timeline_year', self.settings.timeline_year)
+        self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
+        self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
+        self.ractive.set('vizualization_fix', self.settings.vizualization_fix)
+        self.ractive.set('timeline_fix', self.settings.timeline_fix)
+
+        */
+
 
 	trigger_remove_sticky_timeline(id) {
 
 		var self = this
 
 		$('.anomolies_header').classList.remove("graph-scroll-fixed");
+		//$("#timeline_map").style.display = "none"
 
-		$("#timeline_map").style.display = "none"
+		self.settings.timeline_map_display = false
+		self.settings.timeline_fix = true
+
+		self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
+		self.ractive.set('timeline_fix', self.settings.timeline_fix)
 
 		self.ctx.clearRect(0, 0, self.canvas.width, self.canvas.height);
 
@@ -1046,50 +1196,71 @@ export class Climate {
 
 	trigger_map_add_sticky_timeline(id) {
 
-		$('#timeline_map').classList.add("timeline-scroll-fixed");
+		var self = this
 
-		this.NRM_clusters_boundaries.style("opacity", 0)
+		self.settings.timeline_map_fix = true
+		self.settings.NRM_clusters_display = false
+
+		$('#timeline_map').classList.add("timeline-scroll-fixed");
+		self.NRM_clusters_boundaries.style("opacity", 0)
+
+		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
+		self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
+
 	}
 
 	trigger_map_remove_sticky_timeline(id) {
 		
 		$('#timeline_map').classList.remove("timeline-scroll-fixed");
 
+		self.settings.timeline_map_fix = false
+		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
+
 	}
 
 	trigger_timeline_open(id) {
 
-		this.NRM_clusters_boundaries.style("opacity", 0)
+		var self = this
 
+		self.settings.timeline_map_display = true
+		self.settings.NRM_clusters_display = false
+		self.settings.timeline_map_fix = true
+		self.settings.timeline_fix = true
+
+		self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
+		self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
+		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
+		self.ractive.set('timeline_fix', self.settings.timeline_fix)
+
+		self.NRM_clusters_boundaries.style("opacity", 0)
 		$('#timeline_map').classList.add("timeline-scroll-fixed");
-
 		$('.anomolies_header').classList.add("graph-scroll-fixed");
 
 	}
 
 	trigger_timeline_close(id) {
 
-		console.log("Closing timeline")
+		var self = this
 
 		this.NRM_clusters_boundaries.style("opacity", 1)
 
-		$('#timeline_map').classList.remove("timeline-scroll-fixed");
+		//$('#timeline_map').classList.remove("timeline-scroll-fixed");
 
-		$('.anomolies_header').classList.remove("graph-scroll-fixed");
+		//$('.anomolies_header').classList.remove("graph-scroll-fixed");
+
+		self.settings.NRM_clusters_display = true
+		self.settings.timeline_map_fix = false
+		self.settings.timeline_fix = false
+
+		self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
+		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
+		self.ractive.set('timeline_fix', self.settings.timeline_fix)
 
 	}
 
 	trigger_image_map(id) {
 
 		var self = this
-
-		this.NRM_sub_clusters_boundaries.style("opacity", 0)
-
-		this.NRM_clusters_boundaries.style("opacity", 0)
-
-		$("#image_inside").style.display = "block"
-
-		$("#image_inside").style.backgroundImage = "url('" + self.triggers[id].file + ".jpg')";
 
 		var html = ""
 
@@ -1107,6 +1278,25 @@ export class Climate {
 
 		}
 
+		self.settings.NRM_clusters_display = false
+		self.settings.NRM_sub_clusters_display = false
+		self.settings.map_display = true
+		self.settings.map_src = self.triggers[id].file + ".jpg"
+
+        self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
+        self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
+        self.ractive.set('map_display', self.settings.map_display)
+        self.ractive.set('map_src', self.settings.map_src)
+
+
+		this.NRM_sub_clusters_boundaries.style("opacity", 0)
+
+		this.NRM_clusters_boundaries.style("opacity", 0)
+
+		// $("#image_inside").style.display = "block"
+
+		// $("#image_inside").style.backgroundImage = "url('" + self.triggers[id].file + ".jpg')";
+
 		$('.keybox').innerHTML = html
 
 		$('.chart_titles').innerHTML = self.triggers[id].topic
@@ -1116,8 +1306,6 @@ export class Climate {
 	trigger_vector_map(id) {
 
 		var self = this
-
-		$("#image_inside").style.display = "none"
 
 		var targets = self.triggers[id].file
 
@@ -1167,14 +1355,21 @@ export class Climate {
 
 		html += "<ul>"
 
-		$('.keybox').innerHTML = html
-
 		this.NRM_sub_clusters_boundaries.style("fill", function(d) { return colouriser(d.properties.label)})
 
 		this.NRM_sub_clusters_boundaries.style("opacity", 1)
 
 		$('.chart_titles').innerHTML = self.triggers[id].topic
 
+		$('.keybox').innerHTML = html
+
+		// $("#image_inside").style.display = "none"
+
+		self.settings.map_display = false
+		self.settings.NRM_sub_clusters_display = true
+
+		self.ractive.set('map_display', self.settings.map_display)
+		self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
 
 	}
 
@@ -1184,9 +1379,9 @@ export class Climate {
 
 		this.NRM_clusters_boundaries.style("opacity", 0)
 
-		$("#timeline_map").style.display = "none"
+		//$("#timeline_map").style.display = "none"
 
-		$("#image_inside").style.display = "none"
+		//$("#image_inside").style.display = "none"
 
 		$('.chart_titles').innerHTML = ""
 

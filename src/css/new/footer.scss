@@ -6,7 +6,11 @@
     text-align: center; }
   .interactive .footer {
     margin: 0 auto;
-    padding-bottom: 40px; }
+    padding-bottom: 40px; 
+    width: 100%;
+    background-color: white;
+    z-index: 101;
+  }
     .interactive .footer h2 {
       color: #2a4006;
       margin: 1em 10px; }

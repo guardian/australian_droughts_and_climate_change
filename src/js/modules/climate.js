@@ -6,6 +6,7 @@ import Ractivater from 'ractive'
 import * as topojson from "topojson"
 import '../modules/raf'
 import { videoPlayer } from '../modules/video'
+import share from '../modules/share'
 
 
 export class Climate {
@@ -15,6 +16,8 @@ export class Climate {
 	    this.screenWidth = window.innerWidth;
 
 	    this.screenHeight = window.innerHeight;
+
+	    this.max_width = (window.innerHeight > 960) ? 960 : window.innerHeight ;
 
 		this.latitude = -28.5
 
@@ -45,6 +48,8 @@ export class Climate {
 			"key" : "",
 
 			"smallScreen" : this.screenTest(),
+
+			"max_width" : this.max_width,
 
 			"filepath" : "https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/"
 
@@ -411,7 +416,7 @@ export class Climate {
 
 			image.src = self.settings.filepath + "timeline/" + i + ".jpg"
 
-			// self.preloaded.push(image)
+			self.preloaded.push(image)
 
 		}
 
@@ -438,27 +443,19 @@ export class Climate {
 
         this.resize()
 
-
-
-
-        /*
-
         this.ractive.on( 'social', function ( context, channel ) {
 
-            var title = "Deaths inside: Indigenous Australian deaths in custody" ;
+            var title = "The new normal? How climate change is making droughts worse" ;
 
             var params = (channel==='facebook') ? 'fb' : 'tw' ;
 
-            var message = 'The Deaths inside database tracks every Indigenous death in custody in Australia from 2008 - 2018.'
+            var message = 'The new normal?<br>How climate change is making droughts worse.'
 
-            let sharegeneral = share(title, "http://theguardian.com/deathsinside?CMP=share_btn_" + params, 'https://i.guim.co.uk/img/media/9d46340d9bade310e24918accd90fb6e2cdeef0e/0_0_1300_780/master/1300.jpg?width=1200&height=630&quality=85&auto=format&usm=12&fit=crop&crop=faces%2Centropy&bm=normal&ba=bottom%2Cleft&blend64=aHR0cHM6Ly9hc3NldHMuZ3VpbS5jby51ay9pbWFnZXMvb3ZlcmxheXMvZDM1ODZhNWVmNTc4MTc1NmQyMWEzYjYzNWU1MTcxNDEvdGctZGVmYXVsdC5wbmc&s=3f3e094b6823f3a0fc63a79fa4269ec5', '', '#DeathsInside', message);
+            let sharegeneral = share(title, "http://theguardian.com/environment/ng-interactive/2018/oct/02/the-new-normal-how-climate-change-is-making-droughts-worse" + params, null, '', '#TheNewNormal', message);
 
             sharegeneral(channel);
 
         });
-
-        */
-
 
     }
 
@@ -473,6 +470,8 @@ export class Climate {
             clearTimeout(document.body.data)
 
             document.body.data = setTimeout( function() { 
+
+            	self.settings.max_width = (window.innerHeight > 960) ? 960 : window.innerHeight ;
 
                 self.settings.smallScreen  = (window.innerWidth < 740) ? true : false ;
 
@@ -788,7 +787,7 @@ export class Climate {
 			.append('div')
 				.attr("class", "keybox")
 				.style('position','absolute')
-				.style('top', ( (heightMap / 100 * 90) - 250 ) + "px")
+				.style('top', ( (widthMap / 100 * 90) - 200 ) + "px")
 				.style('left', "0px")
 				.style('width', (widthMap / 100 * 60) + "px")
 				.style('min-height', 100 + "px")
@@ -1019,7 +1018,7 @@ export class Climate {
         			self.currentYear = currentYear
 
         			self.settings.timeline_map_display = true
-        			self.settings.timeline_map_src = self.settings.filepath + "timeline/" + currentYear + ".jpg" //self.preloaded[timescale].src //
+        			self.settings.timeline_map_src = self.preloaded[timescale].src //self.settings.filepath + "timeline/" + currentYear + ".jpg"
         			self.settings.timeline_year = currentYear
 
 			        self.ractive.set('timeline_map_display', self.settings.timeline_map_display)

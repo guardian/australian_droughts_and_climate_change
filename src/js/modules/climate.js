@@ -25,6 +25,8 @@ export class Climate {
 
 		this.position = -1
 
+		this.preloaded = []
+
 		this.settings = {
 
 			"map_display" : true,
@@ -388,7 +390,24 @@ export class Climate {
 
 		    self.ractivate()
 
+		    self.loadImages()
+
 		});
+
+	}
+
+	loadImages() {
+
+		var self = this
+
+		for (var i = 1900; i < 2018; i++) {
+
+			let image = new Image();
+
+			image.src = self.settings.filepath + "timeline/" + i + ".jpg"
+
+			self.preloaded.push(image)
+		}
 
 	}
 
@@ -991,7 +1010,7 @@ export class Climate {
         			self.currentYear = currentYear
 
         			self.settings.timeline_map_display = true
-        			self.settings.timeline_map_src = self.settings.filepath + "timeline/" + currentYear + ".jpg"
+        			self.settings.timeline_map_src = self.preloaded[timescale].src //self.settings.filepath + "timeline/" + currentYear + ".jpg"
         			self.settings.timeline_year = currentYear
 
 			        self.ractive.set('timeline_map_display', self.settings.timeline_map_display)

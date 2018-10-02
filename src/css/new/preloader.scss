@@ -12,5 +12,5 @@
     position: fixed;
     background-color: black;
     opacity: 1;
-	background-image: url('https://interactive.guim.co.uk/embed/aus/2018/feb/mdb-multimedia/preloader/Webp.net-gifmaker.gif');
+	background-image: url('<%= path %>/assets/images/loading.gif');
 }

@@ -73,7 +73,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#FFD37F','#C7D79E',"#7AB6F5"],
 			"key" : ["Crop growing areas","Modified pastures for grazing","Irrigated farmland"],
-			"legend" : "Key",
+			"legend" : "Land use",
 			"rewind" : true
 		},{
 			"file" : "maps/no-graze",
@@ -85,7 +85,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#FFD37F','#C7D79E',"#7AB6F5","#FFBEE8"],
 			"key" : ["Crop growing areas","Modified pastures for grazing","Irrigated farmland","Native vegetation used for grazing"],
-			"legend" : "Key",
+			"legend" : "Land use",
 			"rewind" : true
 		},{
 			"file" : null,
@@ -108,7 +108,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
-			"legend" : "Key",
+			"legend" : "Rainfall",
 			"rewind" : true
 		},{
 			"file" : "maps/2014",
@@ -120,7 +120,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
-			"legend" : "Key",
+			"legend" : "Rainfall",
 			"rewind" : true
 		},{
 			"file" : "maps/2015",
@@ -132,7 +132,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
-			"legend" : "Key",
+			"legend" : "Rainfall",
 			"rewind" : true
 		},{
 			"file" : "maps/2016",
@@ -144,7 +144,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
-			"legend" : "Key",
+			"legend" : "Rainfall",
 			"rewind" : true
 		},{
 			"file" : "maps/2017",
@@ -156,7 +156,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
-			"legend" : "Key",
+			"legend" : "Rainfall",
 			"rewind" : true
 		},{
 			"file" : "maps/2018",
@@ -168,7 +168,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
-			"legend" : "Key",
+			"legend" : "Rainfall",
 			"rewind" : true
 		},{
 			"file" : "maps/soil",
@@ -180,7 +180,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
-			"legend" : "Key",
+			"legend" : "Soil moisture",
 			"rewind" : true
 		},{
 			"file" : null,
@@ -204,7 +204,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average','lowest on record' ],
-			"legend" : "Key",
+			"legend" : "Rainfall",
 			"rewind" : true
 		},{
 			"file" : "sturts",
@@ -216,7 +216,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
-			"legend" : "Key",
+			"legend" : "Rainfall",
 			"rewind" : false
 		},{
 			"file" : "great",
@@ -228,7 +228,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
-			"legend" : "Key",
+			"legend" : "Rainfall",
 			"rewind" : true
 		},{
 			"file" : "goyderline",
@@ -240,7 +240,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
-			"legend" : "Key",
+			"legend" : "Rainfall",
 			"rewind" : true
 		},{
 			"file" : "federation",
@@ -252,7 +252,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
-			"legend" : "Key",
+			"legend" : "Rainfall",
 			"rewind" : true
 		},{
 			"file" : null,

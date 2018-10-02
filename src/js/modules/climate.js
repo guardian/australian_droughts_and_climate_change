@@ -443,6 +443,8 @@ export class Climate {
 
         this.resize()
 
+        this.scrollSizer()
+
         this.ractive.on( 'social', function ( context, channel ) {
 
             var title = "The new normal? How climate change is making droughts worse" ;
@@ -481,6 +483,31 @@ export class Climate {
             }, 200);
 
         });
+
+    }
+
+    scrollSizer() {
+
+		function getDocHeight() {
+		    var D = document;
+		    return Math.max(
+		        D.body.scrollHeight, D.documentElement.scrollHeight,
+		        D.body.offsetHeight, D.documentElement.offsetHeight,
+		        D.body.clientHeight, D.documentElement.clientHeight
+		 
+		    )
+		}
+
+		window.addEventListener("scroll", function() {
+
+		    var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
+		    var docheight = getDocHeight()
+		    var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
+		    var trackLength = docheight - winheight
+		    var pctScrolled = Math.floor(scrollTop / trackLength * 100)
+		    //console.log(pctScrolled + '% scrolled')
+
+		}, false)
 
     }
 

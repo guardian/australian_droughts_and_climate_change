@@ -47,7 +47,7 @@ export var videoPlayer = {
 
             obj["loading"] = true
 
-            obj["muted"] = false
+            obj["muted"] = true
 
             videoPlayer.database.push(obj)
 

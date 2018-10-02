@@ -59,13 +59,10 @@
     background-size: cover;
 }
 
-
-
 #map {
     width: 100%;
     position: relative;
 }
-
 
 .NRM_clusters_display .clusters {
     opacity: 1!important;
@@ -75,13 +72,11 @@
     opacity: 1!important;
 }
 
-
 #special_container {
 	width: 100%;
 	display: inline-block;
 	background-color: pink;
 }
-
 
 .graph-scroll-fixed{
     position: fixed;
@@ -95,9 +90,8 @@
   top: auto;
 }
 
-
-
 .drought_labels {
+
     font-family: 'Guardian Text Sans Web', TextSans, Arial, sans-serif;
     
     border-bottom: 1px solid darkgrey;
@@ -109,9 +103,6 @@
     @include mq($from: tablet) {
         font-size: 13px;
     }
-
-
-
 
 }
 

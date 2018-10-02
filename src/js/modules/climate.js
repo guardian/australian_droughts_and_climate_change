@@ -3,8 +3,8 @@ import * as d3 from 'd3'
 import { Toolbelt } from './toolbelt'
 import { $, $$, round, numberWithCommas, wait, getDimensions } from '../modules/util'
 import Ractive from 'ractive'
-import chroma from 'chroma-js'
-import * as topojson from "topojson" //npm install topojson --no-bin-links
+//import * as topojson from "topojson" //npm install topojson --no-bin-links
+import * as topojson from "topojson"
 import '../modules/raf'
 import smoothscroll from 'smoothscroll-polyfill';
 import { videoPlayer } from '../modules/video'
@@ -35,7 +35,7 @@ export class Climate {
 
 			"timeline_map_display" : false,
 
-			"timeline_map_src" : "timeline/1900.jpg",
+			"timeline_map_src" : "<%= path %>/assets/timeline/1900.jpg",
 
 			"timeline_year" : 1900,
 
@@ -350,11 +350,7 @@ export class Climate {
 
 		var self = this
 
-		this.scrollTo($("#app"))
-
-		this.resize()
-
-		var files = ["<%= path %>/assets/json/NRM_clusters.json","<%= path %>/assets/json/NRM_sub_clusters.json","<%= path %>/assets/json/anomolies.json","<%= path %>/assets/json/temp.json","https://interactive.guim.co.uk/docsdata/1Z6G0Hfrb2_YQmFyfXkXe0epHIBZrES2KpaqGmItHTgU.json"];
+		var files = ["https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/json/NRM_clusters.json","https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/json/NRM_sub_clusters.json","https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/json/anomolies.json","https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/json/temp.json","https://interactive.guim.co.uk/docsdata/1Z6G0Hfrb2_YQmFyfXkXe0epHIBZrES2KpaqGmItHTgU.json"];
 		
 		var promises = [];
 
@@ -406,7 +402,8 @@ export class Climate {
 
 			image.src = self.settings.filepath + "timeline/" + i + ".jpg"
 
-			self.preloaded.push(image)
+			// self.preloaded.push(image)
+
 		}
 
 	}
@@ -422,7 +419,7 @@ export class Climate {
         var self = this
 
         this.ractive = new Ractive({
-            el: '#app',
+            el: '#climate_interactive',
             data: self.settings,
             template: template
         })
@@ -1010,7 +1007,7 @@ export class Climate {
         			self.currentYear = currentYear
 
         			self.settings.timeline_map_display = true
-        			self.settings.timeline_map_src = self.preloaded[timescale].src //self.settings.filepath + "timeline/" + currentYear + ".jpg"
+        			self.settings.timeline_map_src = self.settings.filepath + "timeline/" + currentYear + ".jpg" //self.preloaded[timescale].src //
         			self.settings.timeline_year = currentYear
 
 			        self.ractive.set('timeline_map_display', self.settings.timeline_map_display)

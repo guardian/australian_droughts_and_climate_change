@@ -47,7 +47,7 @@ export var videoPlayer = {
 
             obj["loading"] = true
 
-            obj["muted"] = false
+            obj["muted"] = true
 
             videoPlayer.database.push(obj)
 
@@ -186,9 +186,11 @@ export var videoPlayer = {
 
         var isApp = (window.location.origin === "file://" && /(android)/i.test(navigator.userAgent) || window.location.origin === "file://" && /(iPad)/i.test(navigator.userAgent)) ? true : false;
 
+
+
         if (Hls.isSupported() && videoPlayer.isMobile == false && navigator.userAgent.toLowerCase().indexOf('firefox') == -1) {
 
-            vinfo = { src: '.m3u8', type: 'application/x-mpegURL' }
+           // vinfo = { src: '.m3u8', type: 'application/x-mpegURL' }
 
         } else {
 

@@ -41,6 +41,12 @@
 
 }
 
+#map_block {
+    width: 100%;
+    margin: auto;
+    max-width: 960px;
+}
+
 #image_block img {
     width: 100%;
     height: auto;
@@ -53,11 +59,7 @@
     background-size: cover;
 }
 
-#map_block {
-    width: 100%;
-    margin: auto;
-    max-width: 960px;
-}
+
 
 #map {
     width: 100%;

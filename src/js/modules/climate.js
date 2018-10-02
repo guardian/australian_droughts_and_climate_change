@@ -787,7 +787,7 @@ export class Climate {
 			.append('div')
 				.attr("class", "keybox")
 				.style('position','absolute')
-				.style('top', ( (self.max_width / 100 * 90) - 200 ) + "px")
+				.style('top', ( (widthMap / 100 * 90) - 200 ) + "px")
 				.style('left', "0px")
 				.style('width', (widthMap / 100 * 60) + "px")
 				.style('min-height', 100 + "px")

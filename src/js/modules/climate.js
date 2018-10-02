@@ -259,7 +259,7 @@ export class Climate {
 			"v3" : "trigger_vector_map",
 			"v4" : false,
 			"position" : 0,
-			"colours" : ['white', '#f49d75', '#c12c38'],
+			"colours" : ['white', '#f49d75', '#cc3399'],
 			"key" : [],
 			"rewind" : true
 		},{

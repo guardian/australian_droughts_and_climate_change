@@ -14,15 +14,21 @@
 @import "new/preloader";
 @import "new/textspans";
 
-/*
-@import "interactive";
-@import "preloader";
-@import "titles";
-@import "credits";
-@import "footer";
-@import "skip";
-@import "anomolies";
-@import "triggers";
-*/
+@import "fullscreen";
+.element-atom,
+.interactive-atom {
+    margin: 0 !important;
+}
+
+body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
 
 
+#climate_interactive {
+	width: 100%;
+	display: inline-block;
+}

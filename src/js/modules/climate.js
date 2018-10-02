@@ -1,15 +1,12 @@
 import template from '../../templates/template.html'
 import * as d3 from 'd3'
-import { Toolbelt } from './toolbelt'
 import { $, $$, round, numberWithCommas, wait, getDimensions } from '../modules/util'
-import Ractive from 'ractive'
+import Ractivater from 'ractive'
 //import * as topojson from "topojson" //npm install topojson --no-bin-links
 import * as topojson from "topojson"
 import '../modules/raf'
-import smoothscroll from 'smoothscroll-polyfill';
 import { videoPlayer } from '../modules/video'
 
-smoothscroll.polyfill();
 
 export class Climate {
 
@@ -35,7 +32,7 @@ export class Climate {
 
 			"timeline_map_display" : false,
 
-			"timeline_map_src" : "<%= path %>/assets/timeline/1900.jpg",
+			"timeline_map_src" : "https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/timeline/1900.jpg",
 
 			"timeline_year" : 1900,
 
@@ -49,7 +46,7 @@ export class Climate {
 
 			"smallScreen" : this.screenTest(),
 
-			"filepath" : "<%= path %>/assets/"
+			"filepath" : "https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/"
 
 		}
 
@@ -431,7 +428,7 @@ export class Climate {
 
         var self = this
 
-        this.ractive = new Ractive({
+        this.ractive = new Ractivater({
             el: '#climate_interactive',
             data: self.settings,
             template: template
@@ -440,6 +437,8 @@ export class Climate {
         this.setup()
 
         this.resize()
+
+
 
 
         /*
@@ -1358,20 +1357,4 @@ export class Climate {
 
 	}
 
-    scrollTo(element) {
-
-        var self = this
-
-        setTimeout(function() {
-
-            var elementTop = window.pageYOffset + element.getBoundingClientRect().top
-
-            window.scroll({
-              top: elementTop,
-              behavior: "smooth"
-            });
-
-        }, 400);
-
-    }
 }

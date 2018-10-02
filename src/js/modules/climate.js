@@ -61,6 +61,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
+			"legend" : "Key",
 			"rewind" : false
 		},{
 			"file" : "maps/graze",
@@ -72,6 +73,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#FFD37F','#C7D79E',"#7AB6F5"],
 			"key" : ["Crop growing areas","Modified pastures for grazing","Irrigated farmland"],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "maps/no-graze",
@@ -83,6 +85,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#FFD37F','#C7D79E',"#7AB6F5","#FFBEE8"],
 			"key" : ["Crop growing areas","Modified pastures for grazing","Irrigated farmland","Native vegetation used for grazing"],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : null,
@@ -105,6 +108,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "maps/2014",
@@ -116,6 +120,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "maps/2015",
@@ -127,6 +132,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "maps/2016",
@@ -138,6 +144,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "maps/2017",
@@ -149,6 +156,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "maps/2018",
@@ -160,6 +168,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "maps/soil",
@@ -171,6 +180,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest 1%', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest 1%'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : null,
@@ -182,6 +192,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
+			"legend" : "Key",
 			"rewind" : false
 		},{
 			"file" : "settlement",
@@ -193,6 +204,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average','lowest on record' ],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "sturts",
@@ -204,6 +216,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
+			"legend" : "Key",
 			"rewind" : false
 		},{
 			"file" : "great",
@@ -215,6 +228,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "goyderline",
@@ -226,6 +240,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "federation",
@@ -237,6 +252,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#2166ac', '#67a9cf', '#d1e5f0', '#f7f7f7', '#fddbc7', '#ef8a62', '#b2182b'],
 			"key" : ['highest on record', 'very much above average', 'above average', 'average', 'below average', 'very much below average', 'lowest on record'],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : null,
@@ -248,6 +264,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#f6d787' , '#c7d799', '#ffbce8'],
 			"key" : [],
+			"legend" : "Key",
 			"rewind" : false
 		},{
 			"file" : null,
@@ -259,6 +276,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
+			"legend" : "Key",
 			"rewind" : false
 		},{
 			"file" : "drought",
@@ -270,6 +288,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['white', '#f49d75', '#c12c38'],
 			"key" : [],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "rainfall",
@@ -281,6 +300,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['white', '#f49d75', '#cc3399'],
 			"key" : [],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : "temperature",
@@ -292,6 +312,19 @@ export class Climate {
 			"position" : 0,
 			"colours" : ['#c12c38','#c12c38'],
 			"key" : [],
+			"legend" : "Key",
+			"rewind" : true
+		},{
+			"file" : "temperature",
+			"topic" : "Where temperature is projected to increase",
+			"v1" : false,
+			"v2" : false,
+			"v3" : "trigger_vector_map",
+			"v4" : false,
+			"position" : 0,
+			"colours" : ['#c12c38','#c12c38'],
+			"key" : [],
+			"legend" : "Key",
 			"rewind" : true
 		},{
 			"file" : null,
@@ -303,17 +336,7 @@ export class Climate {
 			"position" : 0,
 			"colours" : [],
 			"key" : [],
-			"rewind" : true
-		},{
-			"file" : null,
-			"topic" : "Reset",
-			"v1" : false,
-			"v2" : false,
-			"v3" : "trigger_hide",
-			"v4" : false,
-			"position" : 0,
-			"colours" : [],
-			"key" : [],
+			"legend" : "Key",
 			"rewind" : false
 		}]
 
@@ -987,18 +1010,11 @@ export class Climate {
 			        self.ractive.set('timeline_map_src', self.settings.timeline_map_src)
 			        self.ractive.set('timeline_year', self.settings.timeline_year)
 
-
-        			//$("#timeline_map").style.display = "block"
-        			// $("#timeline_map").style.backgroundImage = "url('" + self.path + "timeline/" + currentYear + ".jpg')";
-        			//$("#timeline_year").innerHTML = currentYear;
-
         			self.ctx.clearRect(0, 0, self.canvas.width, self.canvas.height);
         			self.renderBoxes(currentYear, (window.pageYOffset - timelineTop))
         		}
 
         		if (currentYear > 2018) {
-
-        			//$("#timeline_map").style.display = "none"
 
         			self.settings.timeline_map_display = false
         			self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
@@ -1068,7 +1084,7 @@ export class Climate {
 
 		}
 
-		var html = "<ul><li><strong>Key</strong></li>" ;
+		var html = "<ul><li><strong>" + self.triggers[id].legend + "</strong></li>" ;
 
 		for (var i = 0; i < self.triggers[id].key.length; i++) {
 
@@ -1213,7 +1229,7 @@ export class Climate {
 
 		if (self.triggers[id].key.length > 0) {
 
-			html += "<ul><li><strong>Key</strong></li>" ;
+			html += "<ul><li><strong>" + self.triggers[id].legend + "</strong></li>" ;
 
 			for (var i = 0; i < self.triggers[id].key.length; i++) {
 

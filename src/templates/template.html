@@ -319,14 +319,13 @@
 
 		<div class="editorial_container">
 
-
-			{{#if timeline_map_display}}<div id="timeline_map" style="background-image: url({{filename}}{{timeline_map_src}})"><span id="timeline_year">{{timeline_year}}</span></div>{{/if}}
+			{{#if timeline_map_display}}<div id="timeline_map" class="timeline_map{{#if timeline_map_fix}} timeline-scroll-fixed{{/if}}" style="background-image: url({{filename}}{{timeline_map_src}})"><span id="timeline_year">{{timeline_year}}</span></div>{{/if}}
 
 			<!-- ------------------------- Trigger add sticky timeline -------------------------- -->
 
 			<div class="trigger" data-space-above="0" data-space-below="0"></div>
 
-			<div class="anomolies_header">Timeline of rainfall anomaly</div>
+			<div class="anomolies_header{{#if timeline_fix}} graph-scroll-fixed{{/if}}">Timeline of rainfall anomaly</div>
 
 			<div class="anomolies_container">
 

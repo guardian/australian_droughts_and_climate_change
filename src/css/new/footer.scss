@@ -9,9 +9,11 @@
     padding-bottom: 40px; 
     width: 100%;
     background-color: white;
-    z-index: 101;
+    z-index: 200 !important;
+
   }
     .interactive .footer h2 {
+
       color: #2a4006;
       margin: 1em 10px; }
 
@@ -38,7 +40,9 @@
         width: 1140px; } }
     @media (min-width: 81.25em) {
       .interactive .footer {
-        width: 1300px; } }
+        width: 1300px; 
+
+        } }
 
         .credits_read_more {
         width: 100%;

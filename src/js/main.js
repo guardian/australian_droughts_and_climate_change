@@ -3,7 +3,7 @@ var el = document.createElement('script');
 el.src = '<%= path %>/app.js';
 document.body.appendChild(el);
 
-/*
+
 window.fbAsyncInit = function() {
     FB.init({
       appId            : '741666719251986',
@@ -23,4 +23,3 @@ window.fbAsyncInit = function() {
     js.src = "//connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-*/

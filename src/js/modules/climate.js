@@ -27,6 +27,8 @@ export class Climate {
 
 		this.preloaded = []
 
+		this.photojournalism = []
+
 		this.settings = {
 
 			"map_display" : true,
@@ -406,6 +408,8 @@ export class Climate {
 			let image = new Image();
 
 			image.src = self.settings.filepath + loc + ".jpg"
+
+			self.photojournalism.push(image)
 
 
 		})

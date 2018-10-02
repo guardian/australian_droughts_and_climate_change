@@ -82,7 +82,7 @@ export class Climate {
 			"v4" : false,
 			"position" : 0,
 			"colours" : ['#FFD37F','#C7D79E',"#7AB6F5","#FFBEE8"],
-			"key" : ["Crop growing areas","Modified pastures for grazing","Irrigated farmland","Native vegetation for grazing"],
+			"key" : ["Crop growing areas","Modified pastures for grazing","Irrigated farmland","Native vegetation used for grazing"],
 			"rewind" : true
 		},{
 			"file" : null,
@@ -97,7 +97,7 @@ export class Climate {
 			"rewind" : false
 		},{
 			"file" : "maps/2013",
-			"topic" : "Rainfall deficiency 2013",
+			"topic" : "Rainfall 2013",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_image_map",
@@ -108,7 +108,7 @@ export class Climate {
 			"rewind" : true
 		},{
 			"file" : "maps/2014",
-			"topic" : "Rainfall deficiency 2014",
+			"topic" : "Rainfall 2014",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_image_map",
@@ -119,7 +119,7 @@ export class Climate {
 			"rewind" : true
 		},{
 			"file" : "maps/2015",
-			"topic" : "Rainfall deficiency 2015",
+			"topic" : "Rainfall 2015",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_image_map",
@@ -130,7 +130,7 @@ export class Climate {
 			"rewind" : true
 		},{
 			"file" : "maps/2016",
-			"topic" : "Rainfall deficiency 2016",
+			"topic" : "Rainfall 2016",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_image_map",
@@ -141,7 +141,7 @@ export class Climate {
 			"rewind" : true
 		},{
 			"file" : "maps/2017",
-			"topic" : "Rainfall deficiency 2017",
+			"topic" : "Rainfall 2017",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_image_map",
@@ -152,7 +152,7 @@ export class Climate {
 			"rewind" : true
 		},{
 			"file" : "maps/2018",
-			"topic" : "Rainfall deficiency 2018",
+			"topic" : "Rainfall 2018",
 			"v1" : false,
 			"v2" : false,
 			"v3" : "trigger_image_map",
@@ -279,7 +279,7 @@ export class Climate {
 			"v3" : "trigger_vector_map",
 			"v4" : false,
 			"position" : 0,
-			"colours" : ['white', '#f49d75', '#c12c38'],
+			"colours" : ['white', '#f49d75', '#cc3399'],
 			"key" : [],
 			"rewind" : true
 		},{

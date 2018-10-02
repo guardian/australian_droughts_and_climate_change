@@ -107,12 +107,7 @@
 
 	</div>
 
-
-
-
-
-
-	<div id="viz" class="vizualization">
+	<div id="viz" class="vizualization{{#if vizualization_fix}} graph-scroll-fixed{{/if}}">
 
 		<div id="image_container">
 
@@ -128,7 +123,7 @@
 
 			<div id="map_block">
 
-				<div id="map"></div>
+				<div id="map" class="{{#if NRM_clusters_display}} NRM_clusters_display {{else}} clusterhide {{/if}} {{#if NRM_sub_clusters_display}} NRM_sub_clusters_display {{else}} subclusterhide {{/if}}"></div>
 
 			</div>
 

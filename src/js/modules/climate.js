@@ -389,25 +389,6 @@ export class Climate {
 
         this.resize()
 
-        /*
-
-		this.settings.map_display
-		this.settings.map_src
-		this.settings.timeline_map_display
-		this.settings.timeline_map_src
-		this.settings.timeline_year
-		this.settings.NRM_clusters_display
-		this.settings.NRM_sub_clusters_display
-
-        self.ractive.set('map_display', self.settings.map_display)
-        self.ractive.set('map_src', self.settings.map_src)
-        self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
-        self.ractive.set('timeline_map_src', self.settings.timeline_map_src)
-        self.ractive.set('timeline_year', self.settings.timeline_year)
-        self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
-        self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
-
-        */
 
         /*
 
@@ -732,20 +713,22 @@ export class Climate {
 			.selectAll("path")
 			.data(topojson.feature(self.NRM_clusters, self.NRM_clusters.objects.NRM_clusters).features)
 			.enter().append("path")
-			  .attr("d", pathMap)
-			  .style("opacity", 0)
-			  .style("stroke-width","1")
-			  .style("stroke","darkgrey")
+				.attr("class", "clusters")
+				.attr("d", pathMap)
+				.style("stroke-width","1")
+				.style("stroke","darkgrey")
+				.style("opacity", 0);
 
 
 		this.NRM_sub_clusters_boundaries = svgMap.append("g")
 			.selectAll("path")
 			.data(topojson.feature(self.NRM_sub_clusters, self.NRM_sub_clusters.objects.NRM_sub_clusters).features)
 			.enter().append("path")
+				.attr("class", "sub_clusters")
 			  .attr("d", pathMap)
-			  .style("opacity", 0)
 			  .style("stroke-width","1")
 			  .style("stroke","darkgrey")
+			  .style("opacity", 0);
 
 		d3.select("#map")
 				.append('div')
@@ -1035,23 +1018,19 @@ export class Climate {
 
 	trigger_add_sticky_viz(id) {
 
-		var element = $('.vizualization');
+		var self = this
 
-		element.classList.add("graph-scroll-fixed");
-
-		this.settings.vizualization_fix = true
-		// self.ractive.set('vizualization_fix', self.settings.vizualization_fix)
+		self.settings.vizualization_fix = true
+		self.ractive.set('vizualization_fix', self.settings.vizualization_fix)
 
 	}
 
 	trigger_remove_sticky_viz(id) {
 
-		var element = $('.vizualization');
+		var self = this
 
-		element.classList.remove("graph-scroll-fixed");
-
-		this.settings.vizualization_fix = false
-		// self.ractive.set('vizualization_fix', self.settings.vizualization_fix)
+		self.settings.vizualization_fix = false
+		self.ractive.set('vizualization_fix', self.settings.vizualization_fix)
 
 	}
 
@@ -1107,7 +1086,7 @@ export class Climate {
 
 		this.NRM_clusters_boundaries.style("fill", function(d) { return colouriser(d.properties.label)})
 
-		this.NRM_clusters_boundaries.style("opacity", 1)
+		//this.NRM_clusters_boundaries.style("opacity", 1)
 
 		//$("#image_inside").style.display = "none"
 		self.settings.map_display = false
@@ -1202,7 +1181,7 @@ export class Climate {
 		self.settings.NRM_clusters_display = false
 
 		$('#timeline_map').classList.add("timeline-scroll-fixed");
-		self.NRM_clusters_boundaries.style("opacity", 0)
+		//self.NRM_clusters_boundaries.style("opacity", 0)
 
 		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
 		self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
@@ -1232,7 +1211,7 @@ export class Climate {
 		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
 		self.ractive.set('timeline_fix', self.settings.timeline_fix)
 
-		self.NRM_clusters_boundaries.style("opacity", 0)
+		//self.NRM_clusters_boundaries.style("opacity", 0)
 		$('#timeline_map').classList.add("timeline-scroll-fixed");
 		$('.anomolies_header').classList.add("graph-scroll-fixed");
 
@@ -1242,17 +1221,19 @@ export class Climate {
 
 		var self = this
 
-		this.NRM_clusters_boundaries.style("opacity", 1)
+		//this.NRM_clusters_boundaries.style("opacity", 1)
 
 		//$('#timeline_map').classList.remove("timeline-scroll-fixed");
 
 		//$('.anomolies_header').classList.remove("graph-scroll-fixed");
 
 		self.settings.NRM_clusters_display = true
+		self.settings.NRM_sub_clusters_display = false
 		self.settings.timeline_map_fix = false
 		self.settings.timeline_fix = false
 
 		self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
+		self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
 		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
 		self.ractive.set('timeline_fix', self.settings.timeline_fix)
 
@@ -1289,9 +1270,9 @@ export class Climate {
         self.ractive.set('map_src', self.settings.map_src)
 
 
-		this.NRM_sub_clusters_boundaries.style("opacity", 0)
+		//this.NRM_sub_clusters_boundaries.style("opacity", 0)
 
-		this.NRM_clusters_boundaries.style("opacity", 0)
+		//this.NRM_clusters_boundaries.style("opacity", 0)
 
 		// $("#image_inside").style.display = "block"
 
@@ -1357,7 +1338,7 @@ export class Climate {
 
 		this.NRM_sub_clusters_boundaries.style("fill", function(d) { return colouriser(d.properties.label)})
 
-		this.NRM_sub_clusters_boundaries.style("opacity", 1)
+		//this.NRM_sub_clusters_boundaries.style("opacity", 1)
 
 		$('.chart_titles').innerHTML = self.triggers[id].topic
 
@@ -1367,21 +1348,32 @@ export class Climate {
 
 		self.settings.map_display = false
 		self.settings.NRM_sub_clusters_display = true
+		self.settings.NRM_clusters_display = false
 
 		self.ractive.set('map_display', self.settings.map_display)
 		self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
+		self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
 
 	}
 
 	trigger_hide(id) {
 
-		this.NRM_sub_clusters_boundaries.style("opacity", 0)
+		var self = this
 
-		this.NRM_clusters_boundaries.style("opacity", 0)
+		//this.NRM_sub_clusters_boundaries.style("opacity", 0)
+
+		//this.NRM_clusters_boundaries.style("opacity", 0)
 
 		//$("#timeline_map").style.display = "none"
 
 		//$("#image_inside").style.display = "none"
+
+		self.settings.NRM_clusters_display = false
+		self.settings.NRM_sub_clusters_display = false
+
+        self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
+        self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
+
 
 		$('.chart_titles').innerHTML = ""
 

@@ -53,6 +53,7 @@
         "hls.js": "^0.11.0",
         "jquery": "^3.3.1",
         "mustache": "^2.3.0",
+        "node-fetch-polyfill": "^2.0.6",
         "promise-polyfill": "^6.0.2",
         "ractive": "^1.0.0",
         "request": "^2.85.0",

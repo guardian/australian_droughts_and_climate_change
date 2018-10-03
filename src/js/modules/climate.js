@@ -13,6 +13,8 @@ export class Climate {
 
 	constructor() {
 
+		var self = this
+
 	    this.screenWidth = window.innerWidth;
 
 	    this.screenHeight = window.innerHeight;
@@ -33,7 +35,7 @@ export class Climate {
 
 			"map_display" : true,
 
-			"map_src" : "maps/graze.jpg",
+			"map_src" : "graze.jpg",
 
 			"timeline_map_display" : false,
 
@@ -53,7 +55,9 @@ export class Climate {
 
 			"max_width" : this.max_width,
 
-			"filepath" : "https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/"
+			"filepath" : "https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/",
+
+			"prefix" : this.imgMax(self.screenWidth)
 
 		}
 
@@ -70,7 +74,7 @@ export class Climate {
 			"legend" : "Key",
 			"rewind" : false
 		},{
-			"file" : "maps/graze",
+			"file" : "graze",
 			"topic" : "Farmland in Australia",
 			"v1" : false,
 			"v2" : false,
@@ -82,7 +86,7 @@ export class Climate {
 			"legend" : "Land use",
 			"rewind" : true
 		},{
-			"file" : "maps/no-graze",
+			"file" : "no-graze",
 			"topic" : "Farmland and native vegetation used for grazing",
 			"v1" : false,
 			"v2" : false,
@@ -105,7 +109,7 @@ export class Climate {
 			"key" : [],
 			"rewind" : false
 		},{
-			"file" : "maps/2013",
+			"file" : "2013",
 			"topic" : "Rainfall 2013",
 			"v1" : false,
 			"v2" : false,
@@ -117,7 +121,7 @@ export class Climate {
 			"legend" : "Rainfall",
 			"rewind" : true
 		},{
-			"file" : "maps/2014",
+			"file" : "2014",
 			"topic" : "Rainfall 2014",
 			"v1" : false,
 			"v2" : false,
@@ -129,7 +133,7 @@ export class Climate {
 			"legend" : "Rainfall",
 			"rewind" : true
 		},{
-			"file" : "maps/2015",
+			"file" : "2015",
 			"topic" : "Rainfall 2015",
 			"v1" : false,
 			"v2" : false,
@@ -141,7 +145,7 @@ export class Climate {
 			"legend" : "Rainfall",
 			"rewind" : true
 		},{
-			"file" : "maps/2016",
+			"file" : "2016",
 			"topic" : "Rainfall 2016",
 			"v1" : false,
 			"v2" : false,
@@ -153,7 +157,7 @@ export class Climate {
 			"legend" : "Rainfall",
 			"rewind" : true
 		},{
-			"file" : "maps/2017",
+			"file" : "2017",
 			"topic" : "Rainfall 2017",
 			"v1" : false,
 			"v2" : false,
@@ -165,7 +169,7 @@ export class Climate {
 			"legend" : "Rainfall",
 			"rewind" : true
 		},{
-			"file" : "maps/2018",
+			"file" : "2018",
 			"topic" : "Rainfall 2018",
 			"v1" : false,
 			"v2" : false,
@@ -177,7 +181,7 @@ export class Climate {
 			"legend" : "Rainfall",
 			"rewind" : true
 		},{
-			"file" : "maps/soil",
+			"file" : "soil",
 			"topic" : "Relative root zone soil moisture 2018",
 			"v1" : false,
 			"v2" : false,
@@ -354,6 +358,8 @@ export class Climate {
 
 		var self = this
 
+		self.loadImages()
+
 		var files = ["https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/json/NRM_clusters.json","https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/json/NRM_sub_clusters.json","https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/json/anomolies.json","https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/json/temp.json","https://interactive.guim.co.uk/docsdata/1Z6G0Hfrb2_YQmFyfXkXe0epHIBZrES2KpaqGmItHTgU.json"];
 		
 		var promises = [];
@@ -390,18 +396,15 @@ export class Climate {
 
 		    self.ractivate()
 
-		    self.loadImages()
-
 		});
 
 	}
 
 	loadImages() {
 
-		var mapImages = ['maps/2013','maps/2014','maps/2015','maps/2016','maps/2017','maps/2018','maps/graze','maps/no-graze','maps/soil']
-
 		var self = this
 
+		var mapImages = ['maps/' + self.settings.prefix +'/2013','maps/' + self.settings.prefix +'/2014','maps/' + self.settings.prefix +'/2015','maps/' + self.settings.prefix +'/2016','maps/' + self.settings.prefix +'/2017','maps/' + self.settings.prefix +'/2018','maps/' + self.settings.prefix +'/graze','maps/' + self.settings.prefix +'/no-graze','maps/' + self.settings.prefix +'/soil']
 
 		mapImages.forEach( function (loc) {
 
@@ -430,6 +433,13 @@ export class Climate {
     screenTest() {
 
         return (window.innerWidth < 740) ? true : false ;
+
+    }
+
+    imgMax(width) {
+
+        return (width < 640) ? 400 :
+                (width < 801) ? 800 : 1200
 
     }
 
@@ -502,6 +512,7 @@ export class Climate {
 		    )
 		}
 
+		// Detect when a user does a crazy big scroll
 		window.addEventListener("scroll", function() {
 
 		    var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
@@ -519,7 +530,11 @@ export class Climate {
 
 		var self = this
 
-		videoPlayer.init()
+		if (!self.settings.smallScreen) {
+
+			videoPlayer.init()
+
+		}
 
 	    d3.selection.prototype.moveToFront = function() {  
 	      return this.each(function(){
@@ -831,7 +846,11 @@ export class Climate {
 			triggers[i].innerHTML = self.triggers[i].topic
 		}
 
-		videoPlayer.initScroll()
+		if (!self.settings.smallScreen) {
+
+			videoPlayer.initScroll()
+
+		}
 
 		this.renderLoop()
 

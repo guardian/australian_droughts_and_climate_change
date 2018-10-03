@@ -34,6 +34,12 @@ export class Climate {
 
 		this.preloaded = []
 
+		this.currentPosition = -1
+
+		this.lastScrollPosition = 0
+
+		this.lastTriggerPosition = -1
+
 		this.photojournalism = []
 
 		this.settings = {
@@ -507,6 +513,8 @@ export class Climate {
 
     scrollSizer() {
 
+    	var self = this
+
 		function getDocHeight() {
 		    var D = document;
 		    return Math.max(
@@ -517,17 +525,101 @@ export class Climate {
 		    )
 		}
 
-		// Detect when a user does a crazy big scroll
-		window.addEventListener("scroll", function() {
-
+		/*
 		    var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
 		    var docheight = getDocHeight()
 		    var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
 		    var trackLength = docheight - winheight
 		    var pctScrolled = Math.floor(scrollTop / trackLength * 100)
-		    //console.log(pctScrolled + '% scrolled')
+		    console.log(pctScrolled + '% scrolled')
+		*/
 
-		}, false)
+		// Detect when a user does a crazy big scroll
+		var isScrolling;
+
+		// Listen for scroll events
+		window.addEventListener('scroll', function ( event ) {
+
+			// Clear our timeout throughout the scroll
+			window.clearTimeout( isScrolling );
+
+			// Set a timeout to run after scrolling ends
+			isScrolling = setTimeout(function() {
+
+			    var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
+			    var docheight = getDocHeight()
+			    var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
+			    var trackLength = docheight - winheight
+			    var pctScrolled = Math.floor(scrollTop / trackLength * 100)
+
+			    var pctDifference = Math.abs(self.lastScrollPosition - pctScrolled)
+
+			    var triggerDifference = Math.abs(self.currentPosition - self.lastTriggerPosition)
+
+			    if (triggerDifference > 2) {
+
+			    	console.log(self.triggers[self.currentPosition].topic)
+
+					    /*
+
+						self.settings.map_display
+						self.settings.map_src
+						self.settings.timeline_map_display
+						self.settings.timeline_map_src
+						self.settings.timeline_map_fix
+						self.settings.timeline_year
+						self.settings.NRM_clusters_display
+						self.settings.NRM_sub_clusters_display
+						self.settings.vizualization_fix
+						self.settings.timeline_fix
+
+					    self.ractive.set('map_display', self.settings.map_display)
+					    self.ractive.set('map_src', self.settings.map_src)
+					    self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
+					    self.ractive.set('timeline_map_src', self.settings.timeline_map_src)
+					    self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
+					    self.ractive.set('timeline_year', self.settings.timeline_year)
+					    self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
+					    self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
+					    self.ractive.set('vizualization_fix', self.settings.vizualization_fix)
+					    self.ractive.set('timeline_fix', self.settings.timeline_fix)
+
+					    */
+
+					    self.settings.map_display = false
+					    self.settings.timeline_map_display = false
+						self.settings.NRM_clusters_display = false
+						self.settings.NRM_sub_clusters_display = false
+
+						self.ractive.set('map_display', self.settings.map_display)
+						self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
+						self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
+					    self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
+
+					    $('.chart_titles').innerHTML = ""
+						$('.keybox').innerHTML = ""
+
+						if (self.triggers[self.currentPosition].v3) {
+							self[self.triggers[self.currentPosition].v3](self.currentPosition)
+						} else {
+							if (self.triggers[self.currentPosition].v2) {
+								self[self.triggers[self.currentPosition].v2](self.currentPosition)
+							}
+						}
+
+						//self.[self.triggers[self.currentPosition].v3](self.currentPosition);
+
+
+			    }
+
+			    
+			    self.lastTriggerPosition = self.currentPosition
+			    self.lastScrollPosition = pctScrolled
+
+
+			}, 66);
+
+		}, false);
 
     }
 
@@ -968,6 +1060,8 @@ export class Climate {
 
 	                		target.position = 3
 
+	                		self.currentPosition = i
+
 	                		// console.log("Forward: " + self.forward)
 
 	                		if (target.v3 && self.forward) {
@@ -1197,33 +1291,6 @@ export class Climate {
 		self.ractive.set('timeline_fix', self.settings.timeline_fix)
 
 	}
-
-    /*
-
-	self.settings.map_display
-	self.settings.map_src
-	self.settings.timeline_map_display
-	self.settings.timeline_map_src
-	self.settings.timeline_map_fix
-	self.settings.timeline_year
-	self.settings.NRM_clusters_display
-	self.settings.NRM_sub_clusters_display
-	self.settings.vizualization_fix
-	self.settings.timeline_fix
-
-    self.ractive.set('map_display', self.settings.map_display)
-    self.ractive.set('map_src', self.settings.map_src)
-    self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
-    self.ractive.set('timeline_map_src', self.settings.timeline_map_src)
-    self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
-    self.ractive.set('timeline_year', self.settings.timeline_year)
-    self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
-    self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
-    self.ractive.set('vizualization_fix', self.settings.vizualization_fix)
-    self.ractive.set('timeline_fix', self.settings.timeline_fix)
-
-    */
-
 
 	trigger_remove_sticky_timeline(id) {
 

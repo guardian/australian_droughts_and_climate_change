@@ -7,6 +7,11 @@ import * as topojson from "topojson"
 import '../modules/raf'
 import { videoPlayer } from '../modules/video'
 import share from '../modules/share'
+import fetched from "fetch-ie8"
+
+if (typeof fetch !== 'function') {
+    global.fetch = fetched
+}
 
 
 export class Climate {

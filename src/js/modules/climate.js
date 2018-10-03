@@ -1,13 +1,14 @@
 import template from '../../templates/template.html'
 import * as d3 from 'd3'
 import { $, $$, round, numberWithCommas, wait, getDimensions } from '../modules/util'
-import Ractivater from 'ractive'
+import Ractive from 'ractive'
 //import * as topojson from "topojson" //npm install topojson --no-bin-links
 import * as topojson from "topojson"
 import '../modules/raf'
 import { videoPlayer } from '../modules/video'
 import share from '../modules/share'
 import fetched from "fetch-ie8"
+Ractive.DEBUG = false;
 
 if (typeof fetch !== 'function') {
     global.fetch = fetched
@@ -458,17 +459,13 @@ export class Climate {
 
         var self = this
 
-        this.ractive = new Ractivater({
+        this.ractive = new Ractive({
             el: '#climate_interactive',
             data: self.settings,
             template: template
         })
 
         this.setup()
-
-        this.resize()
-
-        this.scrollSizer()
 
         this.ractive.on( 'social', function ( context, channel ) {
 
@@ -483,6 +480,16 @@ export class Climate {
             sharegeneral(channel);
 
         });
+
+        this.resize()
+
+
+		if (!self.settings.smallScreen) {
+
+			this.scrollSizer()
+
+		}
+
 
     }
 
@@ -525,15 +532,6 @@ export class Climate {
 		    )
 		}
 
-		/*
-		    var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight
-		    var docheight = getDocHeight()
-		    var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
-		    var trackLength = docheight - winheight
-		    var pctScrolled = Math.floor(scrollTop / trackLength * 100)
-		    console.log(pctScrolled + '% scrolled')
-		*/
-
 		// Detect when a user does a crazy big scroll
 		var isScrolling;
 
@@ -551,73 +549,26 @@ export class Climate {
 			    var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
 			    var trackLength = docheight - winheight
 			    var pctScrolled = Math.floor(scrollTop / trackLength * 100)
-
 			    var pctDifference = Math.abs(self.lastScrollPosition - pctScrolled)
-
 			    var triggerDifference = Math.abs(self.currentPosition - self.lastTriggerPosition)
 
-			    if (triggerDifference > 2) {
+			    if (triggerDifference > 2) {						
 
-			    	console.log(self.triggers[self.currentPosition].topic)
-
-					    /*
-
-						self.settings.map_display
-						self.settings.map_src
-						self.settings.timeline_map_display
-						self.settings.timeline_map_src
-						self.settings.timeline_map_fix
-						self.settings.timeline_year
-						self.settings.NRM_clusters_display
-						self.settings.NRM_sub_clusters_display
-						self.settings.vizualization_fix
-						self.settings.timeline_fix
-
-					    self.ractive.set('map_display', self.settings.map_display)
-					    self.ractive.set('map_src', self.settings.map_src)
-					    self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
-					    self.ractive.set('timeline_map_src', self.settings.timeline_map_src)
-					    self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
-					    self.ractive.set('timeline_year', self.settings.timeline_year)
-					    self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
-					    self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
-					    self.ractive.set('vizualization_fix', self.settings.vizualization_fix)
-					    self.ractive.set('timeline_fix', self.settings.timeline_fix)
-
-					    */
-
-					    self.settings.map_display = false
-					    self.settings.timeline_map_display = false
-						self.settings.NRM_clusters_display = false
-						self.settings.NRM_sub_clusters_display = false
-
-						self.ractive.set('map_display', self.settings.map_display)
-						self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
-						self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
-					    self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
-
-					    $('.chart_titles').innerHTML = ""
-						$('.keybox').innerHTML = ""
-
-						if (self.triggers[self.currentPosition].v3) {
-							self[self.triggers[self.currentPosition].v3](self.currentPosition)
-						} else {
-							if (self.triggers[self.currentPosition].v2) {
-								self[self.triggers[self.currentPosition].v2](self.currentPosition)
-							}
+					if (self.triggers[self.currentPosition].v3) {
+						self[self.triggers[self.currentPosition].v3](self.currentPosition)
+					} else {
+						if (self.triggers[self.currentPosition].v2) {
+							self[self.triggers[self.currentPosition].v2](self.currentPosition)
 						}
-
-						//self.[self.triggers[self.currentPosition].v3](self.currentPosition);
-
+					}
 
 			    }
 
-			    
 			    self.lastTriggerPosition = self.currentPosition
 			    self.lastScrollPosition = pctScrolled
 
 
-			}, 66);
+			}, 200);
 
 		}, false);
 
@@ -935,7 +886,7 @@ export class Climate {
 				.style('width', (widthMap / 100 * 60) + "px")
 				.style('min-height', 100 + "px")
 
-		this.trigger_image_map(1)
+		//this.trigger_image_map(1)
 
 		var triggers = document.getElementsByClassName("trigger");
 
@@ -991,6 +942,8 @@ export class Climate {
     renderBoxes(year, y) {
 
     	var self = this
+
+    	self.ctx.clearRect(0, 0, self.canvas.width, self.canvas.height);
 
     	if (self.settings.smallScreen) {
 
@@ -1169,22 +1122,27 @@ export class Climate {
         			self.settings.timeline_map_display = true
         			self.settings.timeline_map_src = self.preloaded[timescale].src //self.settings.filepath + "timeline/" + currentYear + ".jpg"
         			self.settings.timeline_year = currentYear
-
-			        self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
-			        self.ractive.set('timeline_map_src', self.settings.timeline_map_src)
-			        self.ractive.set('timeline_year', self.settings.timeline_year)
-
-        			self.ctx.clearRect(0, 0, self.canvas.width, self.canvas.height);
+        			self.settings.timeline_fix = true
+        			
         			self.renderBoxes(currentYear, (window.pageYOffset - timelineTop))
+
+        			self.update()
         		}
 
         		if (currentYear > 2018) {
 
         			self.settings.timeline_map_display = false
-        			self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
+        			self.settings.timeline_fix = false
+        			
+        			self.update()
 
         			self.ctx.clearRect(0, 0, self.canvas.width, self.canvas.height);
         		}
+
+           	} else {
+
+           		self.settings.timeline_map_display = false
+           		self.settings.timeline_fix = false
 
            	}
 
@@ -1199,7 +1157,8 @@ export class Climate {
 		var self = this
 
 		self.settings.vizualization_fix = true
-		self.ractive.set('vizualization_fix', self.settings.vizualization_fix)
+		
+		self.update()
 
 	}
 
@@ -1208,7 +1167,8 @@ export class Climate {
 		var self = this
 
 		self.settings.vizualization_fix = false
-		self.ractive.set('vizualization_fix', self.settings.vizualization_fix)
+
+		self.update()
 
 	}
 
@@ -1258,19 +1218,14 @@ export class Climate {
 
 		html += "<ul>"
 
-		$('.keybox').innerHTML = html
-
-		$('.chart_titles').innerHTML = self.triggers[id].topic
-
 		this.NRM_clusters_boundaries.style("fill", function(d) { return colouriser(d.properties.label)})
 
 		self.settings.map_display = false
 		self.settings.NRM_clusters_display = true
 		self.settings.NRM_sub_clusters_display = false
-		
-		self.ractive.set('map_display', self.settings.map_display)
-        self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
-        self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
+		self.settings.vizualization_fix = true
+
+		self.update(self.triggers[id].topic, html)
 
 	}
 
@@ -1278,17 +1233,10 @@ export class Climate {
 
 		var self = this
 
-		$('.keybox').innerHTML = ""
-
-		$('.chart_titles').innerHTML = ""
-
 		self.settings.timeline_map_fix = true
 		self.settings.timeline_fix = true
-		self.settings.timeline_map_display = true
 
-		self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
-		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
-		self.ractive.set('timeline_fix', self.settings.timeline_fix)
+		self.update()
 
 	}
 
@@ -1296,11 +1244,9 @@ export class Climate {
 
 		var self = this
 
-		self.settings.timeline_map_display = false
 		self.settings.timeline_fix = false
 
-		self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
-		self.ractive.set('timeline_fix', self.settings.timeline_fix)
+		self.update()
 
 		self.ctx.clearRect(0, 0, self.canvas.width, self.canvas.height);
 
@@ -1310,18 +1256,18 @@ export class Climate {
 
 		var self = this
 
-		self.settings.timeline_map_fix = true
+		//self.settings.timeline_map_fix = true
 		self.settings.NRM_clusters_display = false
 
-		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
-		self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
+		self.update()
 
 	}
 
 	trigger_map_remove_sticky_timeline(id) {
 		
 		self.settings.timeline_map_fix = false
-		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
+
+		self.update()
 
 	}
 
@@ -1329,15 +1275,9 @@ export class Climate {
 
 		var self = this
 
-		self.settings.timeline_map_display = true
 		self.settings.NRM_clusters_display = false
-		self.settings.timeline_map_fix = true
-		self.settings.timeline_fix = true
 
-		self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
-		self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
-		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
-		self.ractive.set('timeline_fix', self.settings.timeline_fix)
+		self.update()
 
 	}
 
@@ -1350,11 +1290,7 @@ export class Climate {
 		self.settings.timeline_map_fix = false
 		self.settings.timeline_fix = false
 
-		self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
-		self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
-		self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
-		self.ractive.set('timeline_fix', self.settings.timeline_fix)
-
+		self.update()
 	}
 
 	trigger_image_map(id) {
@@ -1377,19 +1313,13 @@ export class Climate {
 
 		}
 
+		self.settings.vizualization_fix = true
 		self.settings.NRM_clusters_display = false
 		self.settings.NRM_sub_clusters_display = false
 		self.settings.map_display = true
 		self.settings.map_src = self.triggers[id].file + ".jpg"
 
-        self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
-        self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
-        self.ractive.set('map_display', self.settings.map_display)
-        self.ractive.set('map_src', self.settings.map_src)
-
-		$('.keybox').innerHTML = html
-
-		$('.chart_titles').innerHTML = self.triggers[id].topic
+		self.update(self.triggers[id].topic, html)
 
 	}
 
@@ -1447,17 +1377,11 @@ export class Climate {
 
 		this.NRM_sub_clusters_boundaries.style("fill", function(d) { return colouriser(d.properties.label)})
 
-		$('.chart_titles').innerHTML = self.triggers[id].topic
-
-		$('.keybox').innerHTML = html
-
 		self.settings.map_display = false
 		self.settings.NRM_sub_clusters_display = true
 		self.settings.NRM_clusters_display = false
 
-		self.ractive.set('map_display', self.settings.map_display)
-		self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
-		self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
+		self.update(self.triggers[id].topic, html)
 
 	}
 
@@ -1468,12 +1392,28 @@ export class Climate {
 		self.settings.NRM_clusters_display = false
 		self.settings.NRM_sub_clusters_display = false
 
-        self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
-        self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
+		self.update()
 
-		$('.chart_titles').innerHTML = ""
+	}
 
-		$('.keybox').innerHTML = ""
+	update(title="", key="") {
+
+		var self = this
+
+	    self.ractive.set('map_display', self.settings.map_display)
+	    self.ractive.set('map_src', self.settings.map_src)
+	    self.ractive.set('timeline_map_display', self.settings.timeline_map_display)
+	    self.ractive.set('timeline_map_src', self.settings.timeline_map_src)
+	    self.ractive.set('timeline_map_fix', self.settings.timeline_map_fix)
+	    self.ractive.set('timeline_year', self.settings.timeline_year)
+	    self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
+	    self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
+	    self.ractive.set('vizualization_fix', self.settings.vizualization_fix)
+	    self.ractive.set('timeline_fix', self.settings.timeline_fix)
+
+		$('.chart_titles').innerHTML = title
+
+		$('.keybox').innerHTML = key
 
 	}
 

@@ -27,7 +27,7 @@ export class Climate {
 
 		var self = this
 
-		var files = ["https://interactive.guim.co.uk/docsdata/1Z6G0Hfrb2_YQmFyfXkXe0epHIBZrES2KpaqGmItHTgU.json"];
+		var files = ["https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/json/anomolies.json","https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/json/temp.json"];
 		
 		var promises = [];
 
@@ -39,7 +39,21 @@ export class Climate {
 
 		Promise.all(promises).then(function(values) {
 
-		    self.database = values[1].sheets
+		    self.anomolies = values[0]
+
+		    for (var i = 0; i < self.anomolies.length; i++) {
+
+		    	self.anomolies[i].year = self.anomolies[i].year.toString().slice(0, 4)
+
+		    }
+
+		    self.temp = values[1]
+
+		    for (var i = 0; i < self.temp.length; i++) {
+
+		    	self.temp[i].year = self.temp[i].year.toString().slice(0, 4)
+
+		    }
 
 		    self.ractivate()
 
@@ -88,6 +102,11 @@ export class Climate {
             clearTimeout(document.body.data)
 
             document.body.data = setTimeout( function() { 
+
+		        d3.select("#anomolies_block svg").remove()
+		        d3.select("#temp_block svg").remove()
+		        
+		        self.setup()
 
 
             }, 200);

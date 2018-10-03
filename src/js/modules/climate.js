@@ -9,7 +9,6 @@ import { videoPlayer } from '../modules/video'
 import share from '../modules/share'
 
 
-
 export class Climate {
 
 	constructor() {

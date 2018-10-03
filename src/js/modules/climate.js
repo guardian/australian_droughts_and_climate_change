@@ -7,11 +7,7 @@ import * as topojson from "topojson"
 import '../modules/raf'
 import { videoPlayer } from '../modules/video'
 import share from '../modules/share'
-import fetched from "node-fetch-polyfill"
 
-if (typeof fetch !== 'function') {
-    global.fetch = fetched
-}
 
 
 export class Climate {
@@ -1177,7 +1173,6 @@ export class Climate {
 		self.ractive.set('map_display', self.settings.map_display)
         self.ractive.set('NRM_clusters_display', self.settings.NRM_clusters_display)
         self.ractive.set('NRM_sub_clusters_display', self.settings.NRM_sub_clusters_display)
-
 
 	}
 

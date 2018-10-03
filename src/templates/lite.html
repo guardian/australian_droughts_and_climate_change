@@ -48,7 +48,7 @@
 					<div class="inline_block">
 						<img class="imagine" src="https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/images/{{prefix}}/drought-4.jpg">
 					</div>
-				</div>
+			</div>
 
 			<div class="picture_caption captivate">
 				Australian Prime Minister Scott Morrison holds up a photo from February 2016 of what sheep and cattle graziers Stephen and Annabel Tully's property used to look like. Photograph: Alex Ellinghausen
@@ -99,63 +99,22 @@
 
 			<p>First, we're going to show you Australia's farm belt.</p>
 
-		</div>
-
-	</div>
-
-	<div id="viz" class="vizualization{{#if vizualization_fix}} graph-scroll-fixed{{/if}}">
-
-		<div id="image_container">
-
-			<div id="image_block" style="max-width:{{max_width}}px">
-
-				{{#if map_display}}<div id="image_inside" style="background-image: url(https://interactive.guim.co.uk/embed/aus/2018/oct/climate-change/maps/{{prefix}}/{{map_src}})"></div>{{/if}}
-
-			</div>
-
-		</div>
-
-		<div id="map_container">
-
-			<div id="map_block" style="max-width:{{max_width}}px">
-
-				<div id="map" class="{{#if NRM_clusters_display}} NRM_clusters_display {{else}} clusterhide {{/if}} {{#if NRM_sub_clusters_display}} NRM_sub_clusters_display {{else}} subclusterhide {{/if}}"></div>
-
-			</div>
-
-		</div>
-
-	</div>
-
-	<div class="editorial_container">
-
-		<!-- -------------------------- Map of farmland -------------------------- -->
-		
-		<div class="trigger" data-space-above="100" data-space-below="0"></div>
-
-		<div class="isolation_block">
-
 			<p>This map shows how land in Australia is categorised by use. In this case, we're showing the farmland that relies heavily on rainfall – <span class="yellow">cropping areas</span> and <span class="green">grazing pastures</span>, as well as <span class="otherBlue">irrigated areas</span>.</p>
 
-		</div>
-
-		<!-- -------------------------- Map of farmland plus native vegetation -------------------------- -->
-
-		<div class="trigger" data-space-above="75" data-space-below="25"></div>
-
-		<div class="isolation_block">
+			<div class="inline_column_image">
+					<div class="inline_block">
+						<img class="imagine" src="<%= path %>/assets/lite/no-graze.png">
+					</div>
+			</div>
 
 			<p>A far greater amount of land is used for <span class="pink">grazing</span>, relying on areas of native vegetation further inland.</p>
 
-		</div>
+			<div class="inline_column_image">
+					<div class="inline_block">
+						<img class="imagine" src="<%= path %>/assets/lite/graze.png">
+					</div>
+			</div>
 
-	</div>
-
-	<div class="trigger" data-space-above="50" data-space-below="50"></div>
-
-	<div class="fullscreen_container">
-
-		<div class="breakout_block">
 
 			<p>So what has happened in these areas?</p>
 
@@ -163,59 +122,27 @@
 
 			<p>Maps of rainfall show a significantly large portion of eastern Australia has been experiencing <span class="darkOrange">drier than normal</span> conditions since 2013, despite a decent amount of rain falling in 2016:</p>
 
-		</div>
-
-	</div>
-
-
-	<div class="editorial_container">
-
-		<!-- -------------------------- GRAPHIC: Maps of rainfall deficiency from 2013 -------------------------- -->
-
-		<div class="trigger" data-space-above="75" data-space-below="25"></div>
-
-		<!-- -------------------------- GRAPHIC: Maps of rainfall deficiency from 2014 -------------------------- -->
-
-		<div class="trigger" data-space-above="75" data-space-below="25"></div>
-
-		<!-- -------------------------- GRAPHIC: Maps of rainfall deficiency from 2015 -------------------------- -->
-
-		<div class="trigger" data-space-above="75" data-space-below="25"></div>
-
-
-		<!-- -------------------------- GRAPHIC: Maps of rainfall deficiency from 2016 -------------------------- -->
-
-		<div class="trigger" data-space-above="75" data-space-below="25"></div>
-
-
-		<!-- ------------------------- GRAPHIC: Maps of rainfall deficiency from 2017 -------------------------- -->
-
-		<div class="trigger" data-space-above="75" data-space-below="25"></div>
-
-		<!-- ------------------------- GRAPHIC: Maps of rainfall deficiency from 2018 -------------------------- -->
-
-		<div class="trigger" data-space-above="75" data-space-below="0"></div>
-
-
-
-		<div class="isolation_block">
+			<div class="inline_column_image">
+					<div class="inline_block">
+						<img class="imagine" src="<%= path %>/assets/lite/lite-rainfall.jpg">
+					</div>
+			</div>
 
 			<p>The lack of rain has been <span class="darkRed">particularly severe</span> in western Queensland, and some areas have been drought-declared for the past five years. More recently, the drought has worsened in NSW. In August 2018 the <a href="https://www.theguardian.com/environment/2018/aug/08/nsw-declared-100-in-drought-as-farmers-fear-relief-package-too-late" target="_blank">entire state was either in drought, or drought-affected</a>.</p>
-
-		</div>
-
-
-		<!-- ------------------------- Map of soil moisture -------------------------- -->
-
-		<div class="trigger" data-space-above="75" data-space-below="0"></div>
-
-		<div class="isolation_block">
 
 			<p>There are other indicators that can show the influence of drought, and its impact on the land.</p>
 
 			<p>Root zone soil moisture measures the percentage of moisture in the top metre of soil, and is a good indication of the water available to plants in a given area. <span class="darkOrange">Drier soil</span> can mean poorer crops, or none at all. This map shows the average root zone soil moisture for 2018 compared with the long-term average for the past 105 years.</p>
 
+
+			<div class="inline_column_image">
+					<div class="inline_block">
+						<img class="imagine" src="<%= path %>/assets/lite/soil.jpg">
+					</div>
+			</div>
+
 			<p>In many areas of NSW the soil is about as dry as it has ever been, with large swathes of land in the <span class="darkRed">driest 1%</span>.</p>
+
 
 		</div>
 
@@ -264,7 +191,6 @@
 					Sommariva station, a cattle and olive business outside Charleville, Queensland Australia. Photograph: Mike Bowers for Guardian Australia
 				</div>
 
-
 				<p>"We found that the millenium drought in southern Australia was quite extreme; it was unprecedented in terms of intensity and duration," she says.</p>
 
 				<p>Freund's research showed the second world war and Federation droughts were also particularly intense when compared against droughts over the past 400 years.</p>
@@ -277,63 +203,24 @@
 
 				<p>Here, you can see a comparison of historical and modern droughts using the reconstructed data up to 1900:</p>
 
+				<div class="inline_column_image">
+					<div class="inline_block">
+						<img class="imagine" src="<%= path %>/assets/lite/lite-droughts.jpg">
+					</div>
+				</div>
 
+				<p>After 1900 there is detailed rainfall data available from the Bureau of Meteorology. This timeline shows the annual rainfall "anomaly", that is how <span class="mediumBlue">high</span> or <span class="darkRed">low</span> the total for a given year is in relation to the long-term average. The maps show the geographic distribution of rainfall, or lack of rainfall:</p>
 
+				<div id="anomalies_block"></div>
 
 			</div>
 
 	</div>
 
-	<!-- ------------------------- The Settlement drought (1790-1793) -------------------------- -->
-
-	<div class="trigger" data-space-above="75" data-space-below="25"></div>
-
-	<!-- ------------------------- Sturt's drought (1809-1830) -------------------------- -->
-
-	<div class="trigger" data-space-above="75" data-space-below="25"></div>
-
-	<!-- ------------------------- The Great drought (1809-1814) -------------------------- -->
-
-	<div class="trigger" data-space-above="75" data-space-below="25"></div>
-
-	<!-- ------------------------- The Goyder line drought (1861-1866)  -------------------------- -->
-
-	<div class="trigger" data-space-above="75" data-space-below="25"></div>
-
-	<!-- ------------------------- Federation drought (1895-1903) -------------------------- -->
-
-	<div class="trigger" data-space-above="75" data-space-below="25"></div>
+	
 
 
 	<div class="fullscreen_container">
-
-		<div class="breakout_block">
-
-			<p>After 1900 there is detailed rainfall data available from the Bureau of Meteorology. This timeline shows the annual rainfall "anomaly", that is how <span class="mediumBlue">high</span> or <span class="darkRed">low</span> the total for a given year is in relation to the long-term average. The maps show the geographic distribution of rainfall, or lack of rainfall:</p>
-
-		</div>
-
-		<div class="editorial_container">
-
-			{{#if timeline_map_display}}<div id="timeline_map" class="timeline_map{{#if timeline_map_fix}} timeline-scroll-fixed{{/if}}" style="background-image: url({{filename}}{{timeline_map_src}})"><span id="timeline_year">{{timeline_year}}</span></div>{{/if}}
-
-			<!-- ------------------------- Trigger add sticky timeline -------------------------- -->
-
-			<div class="trigger" data-space-above="0" data-space-below="0"></div>
-
-			<div class="anomolies_header{{#if timeline_fix}} graph-scroll-fixed{{/if}}">Timeline of rainfall anomaly</div>
-
-			<div class="anomolies_container">
-
-				<div id="anomolies_block" class="anomolies_block"></div>
-
-				<div id="canvas_container"></div>
-				
-			</div>
-
-			<div class="trigger" data-space-above="0" data-space-below="0"></div>
-
-		</div>
 
 		<div class="multimedia_container hero">
 
@@ -374,52 +261,41 @@
 
 			<p>The CSIRO and Bureau of Meteorology have compiled different models for predicting the outcome of climate change in Australia to produce a guide to how different regions will likely be affected.</p>
 
-
-		</div>
-
-	</div>
-
-	<div class="editorial_container">
-
-		<!-- ------------------------- Reset -------------------------- -->
-
-		<div class="trigger" data-space-above="75" data-space-below="25"></div>
-
-		<!-- ------------------------- Map showing where drought will increase -------------------------- -->
-
-		<div class="isolation_block">
-
 			<p>According to this work, droughts are <span class="darkOrange">predicted to increase</span> in a large portion of southern Australia, though it's worth pointing out that the projection has a "medium" level of confidence in most areas (all of the projections are assigned a <a href="https://www.climatechangeinaustralia.gov.au/media/ccia/2.1.6/cms_page_media/168/Chapter%20Six.pdf" target="_blank">confidence level based on evidence, and amount of agreement between various bits of evidence</a>).</p>
-						
-		</div>
 
-		<!-- ------------------------- Map showing where rain will change -------------------------- -->
-
-		<div class="trigger" data-space-above="75" data-space-below="25"></div>
-
-		<div class="isolation_block">
+			<div class="inline_column_image">
+					<div class="inline_block">
+						<img class="imagine" src="<%= path %>/assets/lite/drought-change.png">
+					</div>
+			</div>
 
 			<p>The prediction for rainfall changes is, as King says, quite variable. In several areas the winter or “cool season” rainfall is <span class="darkOrange">predicted to decrease</span> with varying levels of confidence but it's not clear whether this will necessarily lead to an overall annual decrease in rainfall in these areas.</p>
 
-		</div>
-
-		<!-- ------------------------- Map showing where rain will change -------------------------- -->
-
-		<div class="trigger" data-space-above="75" data-space-below="25"></div>
-
-		<div class="isolation_block">
+			<div class="inline_column_image">
+					<div class="inline_block">
+						<img class="imagine" src="<%= path %>/assets/lite/rainfall-change.png">
+					</div>
+			</div>
 
 			<p>However, the predictions around temperature and evaporation are comparatively very clear: every part of Australia will continue to experience <span class="darkRed">increases in average temperature</span>, and will have a higher frequency of hot days.</p>
 
 			<p>This will also result in higher evaporation across Australia, which will continue to make drought conditions worse in the future.</p>
 
+
+			<div class="inline_column_image">
+					<div class="inline_block">
+						<img class="imagine" src="<%= path %>/assets/lite/temperature-change.png">
+					</div>
+			</div>
+
 		</div>
 
 	</div>
 
+
+
 	<!-- ------------------------- Map shoiwng where temperature will increase -------------------------- -->
 
-	<div class="trigger" data-space-above="75" data-space-below="0"></div>
 
 
 	<div class="fullscreen_container">

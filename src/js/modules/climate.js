@@ -455,7 +455,7 @@ export class Climate {
 
             var params = (channel==='facebook') ? 'fb' : 'tw' ;
 
-            var message = 'The new normal?<br>How climate change is making droughts worse.'
+            var message = 'The new normal? How climate change is making droughts worse.'
 
             let sharegeneral = share(title, "http://theguardian.com/environment/ng-interactive/2018/oct/03/the-new-normal-how-climate-change-is-making-droughts-worse", 'https://media.guim.co.uk/5f26d0bb63fc4eb96b20a5ec97f047a95d7456a7/0_0_1000_600/1000.jpg', '', '#TheNewNormal', message);
 
@@ -502,6 +502,7 @@ export class Climate {
 		    )
 		}
 
+		// Detect when a user does a crazy big scroll
 		window.addEventListener("scroll", function() {
 
 		    var winheight= window.innerHeight || (document.documentElement || document.body).clientHeight

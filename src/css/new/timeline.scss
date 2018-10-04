@@ -77,6 +77,7 @@
     
     font-family: 'Guardian Text Sans Web', TextSans, Arial, sans-serif;
     font-size: 20px;
+    font-weight: 600;
     border-bottom: 1px solid darkgrey;
 
     @include mq($until: tablet) {
